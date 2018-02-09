@@ -18,9 +18,9 @@
     </div>
     <div id="container" class="col-sm-8 text-left">
     <div class="text-center">
-        <h1>Welcome</h1>    
-    </div>    
-      
+        <h1>Welcome</h1>
+    </div>
+
       <hr>
     <div class="text-center">
         <a href="Recreation.php">

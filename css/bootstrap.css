@@ -10,6 +10,8 @@
 
 body {
   margin: 0;
+
+
 }
 
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {
@@ -264,7 +266,7 @@ td,th {
 }
 
 @font-face {
-  
+
 }
 
 .glyphicon {
@@ -1349,7 +1351,13 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  background: linear-gradient(
+    to right,
+    #C0E3EE 0%,
+    #C0E3EE 50%,
+    #ABD9E8 50%,
+    #ABD9E8 100%
+  );
 }
 
 button,input,select,textarea {
@@ -4494,6 +4502,7 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
+
 }
 
 @media (min-width:768px) {
@@ -4645,9 +4654,9 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 
 .navbar-toggle .icon-bar {
   display: block;
-  width: 22px;
-  height: 2px;
-  border-radius: 1px;
+  width: 40px;
+  height: 8px;
+  border-radius: 5px;
 }
 
 .navbar-toggle .icon-bar+.icon-bar {
@@ -4959,8 +4968,8 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 }
 
 .navbar-inverse {
-  background-color: #222;
-  border-color: #080808;
+  background-color: transparent;
+  border-bottom-color: transparent;
 }
 
 .navbar-inverse .navbar-brand {
@@ -4977,7 +4986,7 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 }
 
 .navbar-inverse .navbar-nav>li>a {
-  color: #9d9d9d;
+  color: #000;
 }
 
 .navbar-inverse .navbar-nav>li>a:focus,.navbar-inverse .navbar-nav>li>a:hover {
@@ -4996,19 +5005,19 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 }
 
 .navbar-inverse .navbar-toggle {
-  border-color: #333;
+  border-color: transparent;
 }
 
 .navbar-inverse .navbar-toggle:focus,.navbar-inverse .navbar-toggle:hover {
-  background-color: #333;
+  background-color: transparent;
 }
 
 .navbar-inverse .navbar-toggle .icon-bar {
-  background-color: #fff;
+  background-color: #F6821F;
 }
 
 .navbar-inverse .navbar-collapse,.navbar-inverse .navbar-form {
-  border-color: #101010;
+  border-color: transparent;
 }
 
 .navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a:focus,.navbar-inverse .navbar-nav>.open>a:hover {
