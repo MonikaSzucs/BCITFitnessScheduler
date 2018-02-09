@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            YouTube Testing
+        </title>
+    </head>
+    
+    <body>
+        <iframe id='vid' width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen></iframe>
+        
+        
+        <script>
+            var vid = document.getElementById('vid');
+            
+            var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        // Typical action to be performed when the document is ready:
+                        var result = JSON.parse(this.response);
+                        var tag = result['items'][0]['id']['videoId'];
+                        vid.src = 'https://www.youtube.com/embed/' + tag;
+                    }
+                };
+            xhttp.open("GET", "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=tai+chi&key=AIzaSyBmEgHy0Fs50bRDv2N-4LJYSy0-MkT-K50", true);
+            xhttp.send();
+            
+            // alternate requests for 5 other recreation activities:
+            
+            // yoga: https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=yoga&key=AIzaSyBmEgHy0Fs50bRDv2N-4LJYSy0-MkT-K50
+            
+            // mui thai: https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=mui+thai&key=AIzaSyBmEgHy0Fs50bRDv2N-4LJYSy0-MkT-K50
+            
+            // weight lifting: https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=weight+lifting&key=AIzaSyBmEgHy0Fs50bRDv2N-4LJYSy0-MkT-K50
+            
+            // weight training: https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=weight+training&key=AIzaSyBmEgHy0Fs50bRDv2N-4LJYSy0-MkT-K50
+            
+            // CTC: https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=CTC+training&key=AIzaSyBmEgHy0Fs50bRDv2N-4LJYSy0-MkT-K50
+        </script>
+    </body>
+</html>
