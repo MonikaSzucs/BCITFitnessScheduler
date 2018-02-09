@@ -70,7 +70,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="Recreation.php">Recreation</a></li>
         <li><a href="Schedule.php">Schedule</a></li>
-		<li><a href="#">Logout</a></li>
+		<li><a href="index.php">Logout</a></li>
       </ul>
     </div>
   </div>
@@ -83,12 +83,41 @@
     </div>
     <div id="container" class="col-sm-8 text-left">
       <div class="text-center">
-        <h1>Class</h1>
-    </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
+        <h1>Tai Chi</h1>
+        <p> < back</p>
+      </div>
+
+      <div class="row content">
+        <div class="col-sm-5 text-center" id="subIcons">
+          <h3>Course Outline</h3>
+          <p>TAi chi is.....</p>
+        </div>
+        <div class="col-sm-2 text-center" id="subIcons">
+        </div>
+
+        <div class="col-sm-5 text-center" id="subIcons">
+          Video here
+          <p style="margin-top: 300px;">video Description</p>
+        </div>
+      </div>
+
+      <div class="row content">
+        <div class="col-sm-3 text-center" id="subIcons">
+            When?
+        </div>
+        <div class="col-sm-3 text-center">
+          <div class="text-center">
+            Location
+          </div>
+        </div>
+        <div class="col-sm-6 text-center">
+          <a href="Schedule.php">
+            <button>Join</button>
+            <button>Leave</button>
+          </a>
+        </div>
+      </div>
+
     </div>
     <div class="col-sm-2">
 
