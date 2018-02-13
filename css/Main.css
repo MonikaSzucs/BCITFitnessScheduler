@@ -34,6 +34,10 @@ html, body {
 
 }
 
+.services-section-title {
+  min-width:275px;
+}
+
 .services-section-title img{
   margin: auto;
   display: block;
@@ -80,16 +84,16 @@ html, body {
 }
 
 #Head {
-  left: 50%;
-  top: 15%;
+  left: 52.5%;
+  top: 14%;
   position: absolute;
   margin-top: 10px;
   margin-left: -35px;
 }
 
 #TopBody{
-  left: 50%;
-  top: 43%;
+  left: 52.5%;
+  top: 37%;
   position: absolute;
   margin-top: 10px;
   margin-left: -35px;
@@ -97,31 +101,31 @@ html, body {
 
 #RightLeg{
   left: 67%;
-  top: 60%;
+  top: 52.5%;
   position: absolute;
   margin-top: 10px;
   margin-left: -35px;
 }
 
 #LeftLeg{
-  left: 45%;
-  top: 70%;
+  left: 48%;
+  top: 60%;
   position: absolute;
   margin-top: 10px;
   margin-left: -35px;
 }
 
 #LogoArmShort{
-  left: 30%;
-  top: 35%;
+  left: 37%;
+  top: 32%;
   position: absolute;
   margin-top: 10px;
   margin-left: -35px;
 }
 
 #LogoArmLong{
-  left: 65%;
-  top: 35%;
+  left: 70%;
+  top: 27%;
   position: absolute;
   margin-top: 10px;
   margin-left: -35px;
