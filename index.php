@@ -13,25 +13,26 @@
 
 <div class="container-fluid text-center">
   <div class="row content">
-    <div class="col-sm-2 sidenav">
 
+    <div class="col-sm-2 sidenav">
     </div>
+
     <div id="container" class="col-sm-8 text-left">
-    <div class="text-center">
-        <h1>Welcome</h1>
-    </div>
+      <div class="text-center">
+          <h1>Welcome</h1>
+      </div>
 
       <hr>
-    <div class="text-center">
-        <a href="Recreation.php">
-            <button type="button" class="btn btn-primary">Facebook Log In</button>
-        </a>
+      <div class="text-center">
+          <a href="Recreation.php">
+              <button type="button" class="btn btn-primary">Facebook Log In</button>
+          </a>
+      </div>
     </div>
 
-    </div>
     <div class="col-sm-2 sidenav">
-
     </div>
+    
   </div>
 </div>
 
