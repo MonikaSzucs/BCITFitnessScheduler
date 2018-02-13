@@ -29,3 +29,100 @@ html, body {
   vertical-align: middle;  /* vertical alignment of the inline element */
   font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;        /* <-- reset the font property */
 }
+
+.services-section img {
+
+}
+
+.services-section-title img{
+  margin: auto;
+  display: block;
+}
+
+#logoArea{
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  display: block;
+  position: relative;
+}
+
+#LogoTopStopper{
+    left: 50%;
+    top: 0%;
+    position: absolute;
+    margin-top: -60px;
+    margin-left: -35px;
+}
+
+#LeftStopper {
+  left: 15%;
+  top: 0%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+}
+
+#RightStopper {
+  left: 95%;
+  top: 0%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+}
+
+#LongArm{
+  left: 75%;
+  top: 10%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+}
+
+#Head {
+  left: 50%;
+  top: 15%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+}
+
+#TopBody{
+  left: 50%;
+  top: 43%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+}
+
+#RightLeg{
+  left: 67%;
+  top: 60%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+}
+
+#LeftLeg{
+  left: 45%;
+  top: 70%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+}
+
+#LogoArmShort{
+  left: 30%;
+  top: 35%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+}
+
+#LogoArmLong{
+  left: 65%;
+  top: 35%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+}

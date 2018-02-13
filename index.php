@@ -22,7 +22,12 @@
           <h1>Welcome</h1>
       </div>
 
+
       <hr>
+
+
+
+
       <div class="text-center">
           <a href="Recreation.php">
               <button type="button" class="btn btn-primary">Facebook Log In</button>
@@ -32,7 +37,7 @@
 
     <div class="col-sm-2 sidenav">
     </div>
-    
+
   </div>
 </div>
 
