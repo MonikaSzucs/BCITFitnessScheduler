@@ -49,7 +49,100 @@ html, body {
   margin: auto;
   display: block;
   position: relative;
+  background-color:red;
 }
+
+#LogoOuterRing {
+  height: 250px;
+  width: 250px;
+  background-image: url("../Images/LogoParts/OuterRing.svg");
+  opacity: 1;
+  top: 0px;
+  background-size:cover;
+  background-repeat: no-repeat;
+  position:absolute;
+
+
+      -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+         -moz-animation: fadein 2s; /* Firefox < 16 */
+          -ms-animation: fadein 2s; /* Internet Explorer */
+           -o-animation: fadein 2s; /* Opera < 12.1 */
+              animation: fadein 2s;
+}
+
+
+@keyframes fadein {
+    from {
+      opacity: 0;
+      transform: rotateY(0deg);
+    }
+    to   {
+      opacity: 1;
+      transform: rotateY(720deg);
+    }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+    transform: rotateY(0deg);
+  }
+  to   {
+    opacity: 1;
+    transform: rotateY(720deg);
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+    transform: rotateY(0deg);
+  }
+  to   {
+    opacity: 1;
+    transform: rotateY(720deg);
+}
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+    transform: rotateY(0deg);
+  }
+  to   {
+    opacity: 1;
+    transform: rotateY(720deg);
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+    transform: rotateY(0deg);
+  }
+  to   {
+    opacity: 1;
+    transform: rotateY(720deg);
+  }
+}
+
+
+#LogoName {
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
+
+    -webkit-animation: fadein 12s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 12s; /* Firefox < 16 */
+        -ms-animation: fadein 12s; /* Internet Explorer */
+         -o-animation: fadein 12s; /* Opera < 12.1 */
+            animation: fadein 12s;
+}
+
 
 #LogoTopStopper{
     left: 50%;
@@ -57,7 +150,80 @@ html, body {
     position: absolute;
     margin-top: -60px;
     margin-left: -35px;
+    animation-delay: 5s;
+    height: 64px;
+    width: 75px;
+    background-image: url("../Images/LogoParts/TopStopper.svg");
+
+
+    -webkit-animation: TopStopperAnimate 2s ease-out 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: TopStopperAnimate 2s ease-out 2s; /* Firefox < 16 */
+        -ms-animation: TopStopperAnimate 2s ease-out 2s; /* Internet Explorer */
+         -o-animation: TopStopperAnimate 2s ease-out 2s; /* Opera < 12.1 */
+            animation: TopStopperAnimate 2s ease-out 2s;
 }
+
+@keyframes TopStopperAnimate {
+    from {
+      opacity: 0;
+      top: -200px;
+    }
+    to   {
+      opacity: 1;
+      top: 0px;
+    }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+    top: -200px;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+    top: -200px;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+}
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+    top: -200px;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+    top: -200px;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+
+
 
 #LeftStopper {
   left: 15%;
