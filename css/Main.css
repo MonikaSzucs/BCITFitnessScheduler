@@ -135,12 +135,72 @@ html, body {
     font-size: 21px;
     text-align: center;
 
-    -webkit-animation: fadein 12s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 12s; /* Firefox < 16 */
-        -ms-animation: fadein 12s; /* Internet Explorer */
-         -o-animation: fadein 12s; /* Opera < 12.1 */
-            animation: fadein 12s;
+    -webkit-animation: LogoName 12s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: LogoName 12s; /* Firefox < 16 */
+        -ms-animation: LogoName 12s; /* Internet Explorer */
+         -o-animation: LogoName 12s; /* Opera < 12.1 */
+            animation: LogoName 12s;
 }
+
+@keyframes TopStopperAnimate {
+    from {
+      opacity: 0;
+      top: -200px;
+    }
+    to   {
+      opacity: 1;
+      top: 0px;
+    }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes LogoName {
+  from {
+    opacity: 0;
+    top: -200px;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes LogoName {
+  from {
+    opacity: 0;
+    top: -200px;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+}
+}
+
+/* Internet Explorer */
+@-ms-keyframes LogoName {
+  from {
+    opacity: 0;
+    top: -200px;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes LogoName {
+  from {
+    opacity: 0;
+    top: -200px;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
 
 
 #LogoTopStopper{
