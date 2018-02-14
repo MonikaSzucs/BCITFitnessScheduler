@@ -55,8 +55,7 @@ html, body {
 #LogoOuterRing {
   height: 250px;
   width: 250px;
-  background-image: url("../Images/LogoParts/OuterRing.svg");
-  opacity: 1;
+  background-image: url("../Icons/LogoParts/OuterRing.svg");
   top: 0px;
   background-size:cover;
   background-repeat: no-repeat;
@@ -153,8 +152,8 @@ html, body {
     animation-delay: 5s;
     height: 64px;
     width: 75px;
-    background-image: url("../Images/LogoParts/TopStopper.svg");
-
+    background-image: url("../Icons/LogoParts/TopStopper.svg");
+    opacity: 0;
 
     -webkit-animation: TopStopperAnimate 2s ease-out 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: TopStopperAnimate 2s ease-out 2s; /* Firefox < 16 */
