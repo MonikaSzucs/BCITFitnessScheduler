@@ -9,6 +9,8 @@ if(isset($_GET['code'])){
 	header('Location: ' . filter_var($redirectURL, FILTER_SANITIZE_URL));
 }
 
+// Use the token to access Calendar info????
+// ************************************************
 if (isset($_SESSION['token'])) {
 	$gClient->setAccessToken($_SESSION['token']);
 }
@@ -57,6 +59,36 @@ if ($gClient->getAccessToken()) {
     }else{
         $output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
     }
+    
+    // WITH THE ACCESS TOKEN DISPLAY THE CALENDAR
+    // YOU CAN DO IT!!!
+    // ******** Daren's Work ********
+    
+    // create a service object.
+    $service = new Google_Service_Calendar($client);
+    // Print the next 10 events on the user's calendar.
+    $calendarId = 'primary';
+    $optParams = array(
+      'maxResults' => 10,
+      'orderBy' => 'startTime',
+      'singleEvents' => TRUE,
+      'timeMin' => date('c'),
+    );
+    $results = $service->events->listEvents($calendarId, $optParams);
+
+    if (count($results->getItems()) == 0) {
+      print "No upcoming events found.\n";
+    } else {
+      print "Upcoming events:\n";
+      foreach ($results->getItems() as $event) {
+        $start = $event->start->dateTime;
+        if (empty($start)) {
+          $start = $event->start->date;
+        }
+        printf("%s (%s)\n", $event->getSummary(), $start);
+      }
+    }
+    
 } else {
   $newURL = "index.php";
   header('Location: '.$newURL);
