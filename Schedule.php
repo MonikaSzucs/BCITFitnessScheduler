@@ -190,7 +190,37 @@ if ($gClient->getAccessToken()) {
       <div class="text-center">
         <h1>Schedule</h1>
     </div>
-      <p>hii</p>
+        <!--   ***** Daren Table addition *********   -->
+        <table border='1'>
+            <tr>
+                <th></th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+            <?php
+                // insert 17 time rows.
+                $theHour = 5;
+                $timetable = '';
+                for ($i = 0; $i < 17; $i++) {
+                    $newRow = '<tr>';
+                    $theTime = $theHour . ':00';
+                    for ($j = 0; $j < 6; $j++) {
+                        if ($j == 0) {
+                            $newRow .= "<td>$theTime</td>";
+                        } else {
+                            $newRow .= '<td></td>';
+                        }
+                    }
+                    $newRow .= '</tr>';
+                    $theHour++;
+                    $timetable .= $newRow;
+                }
+                echo $timetable;
+            ?>
+        </table>
     </div>
     <div class="col-sm-2 ">
     </div>
