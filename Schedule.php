@@ -3,6 +3,13 @@
 include_once 'gpConfig.php';
 include_once 'User.php';
 
+
+// Need the appropriate class for Google_Service_Calendar
+//require_once './src/google-api-php-client/src/Google/Client.php';
+//require_once './src/vendor/autoload.php';
+//require_once './src/google-api-php-client/vendor/autoload.php';
+//require_once './src/google-api-php-client/src/Google/Client.php';
+
 if(isset($_GET['code'])){
 	$gClient->authenticate($_GET['code']);
 	$_SESSION['token'] = $gClient->getAccessToken();
@@ -61,11 +68,14 @@ if ($gClient->getAccessToken()) {
     }
     
     // WITH THE ACCESS TOKEN DISPLAY THE CALENDAR
-    // YOU CAN DO IT!!!
+    // YOU CAN DO IT!!! (done!)
     // ******** Daren's Work ********
     
+    // ****** NEEDS WORK:
+    //          - Need to correctly display events
+    
     // create a service object.
-    $service = new Google_Service_Calendar($client);
+    $service = new Google_Service_Calendar($gClient);
     // Print the next 10 events on the user's calendar.
     $calendarId = 'primary';
     $optParams = array(
@@ -79,13 +89,13 @@ if ($gClient->getAccessToken()) {
     if (count($results->getItems()) == 0) {
       print "No upcoming events found.\n";
     } else {
-      print "Upcoming events:\n";
+      print "Upcoming events:<br/><br/>";
       foreach ($results->getItems() as $event) {
         $start = $event->start->dateTime;
         if (empty($start)) {
           $start = $event->start->date;
         }
-        printf("%s (%s)\n", $event->getSummary(), $start);
+        printf("%s (%s)<br/>", $event->getSummary(), $start);
       }
     }
     

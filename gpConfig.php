@@ -2,15 +2,27 @@
 session_start();
 
 //Include Google client library
-include_once 'src/Google_Client.php';
-include_once 'src/contrib/Google_Oauth2Service.php';
+
+// ***** Daren: Pathing re-arranged to work with calender API.
+//              Removed your Google_Client and
+//              cleaned up pathing, or at least
+//              I think so!
+
+// ******* Deprecated
+//include_once 'src/Google_Client.php';
+//include_once 'src/contrib/Google_Oauth2Service.php';
+
+// *** Daren: I actually don't know the difference between include and require??
+include_once './src/google-api-php-client/vendor/autoload.php';
+require_once './src/google-api-php-client/src/Google/Client.php';
 
 /*
  * Configuration and setup Google API
  */
-$clientId = '24016751283-msrk4r5snv195albekta8mct2mn8tued.apps.googleusercontent.com'; //Google client ID
-$clientSecret = 'RNRoFvfKSQBJJUT-tBUwF55D'; //Google client secret
-$redirectURL = 'http://localhost/IFitFeb13/BCITFitnessScheduler/Recreation.php'; //Callback URL
+// *** Daren: I used my keys, feeel free to swap
+$clientId = '563792370353-4fd3jjjdv4so0bn7qdhsdjvg00bep8ds.apps.googleusercontent.com'; //Google client ID
+$clientSecret = 'LiC63ETjmukpIxsg72pmUXxX'; //Google client secret
+$redirectURL = 'http://localhost:2000/IFitFeb13/BCITFitnessScheduler/Recreation.php'; //Callback URL
 
 //Call Google API
 $gClient = new Google_Client();
@@ -19,7 +31,15 @@ $gClient->setClientId($clientId);
 $gClient->setClientSecret($clientSecret);
 $gClient->setRedirectUri($redirectURL);
 
-$google_oauthV2 = new Google_Oauth2Service($gClient);
+// ********* daren:  adding scope, Deprecated ./src/config.php
+$gClient->addScope('https://www.googleapis.com/auth/userinfo.profile');
+$gClient->addScope('https://www.googleapis.com/auth/userinfo.email');
+$gClient->addScope('https://www.googleapis.com/auth/calendar');
+$gClient->addScope('https://www.googleapis.com/auth/calendar.readonly');
+
+// ****** Daren: Changed authentication. It's essentiall the same as your Oauth file
+//                  only this way the pathing works!
+$google_oauthV2 = new Google_Service_Oauth2($gClient);
 
 /*
 echo "<pre>";

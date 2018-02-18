@@ -107,6 +107,13 @@ class Google_CurlIO implements Google_IO {
       curl_setopt($ch, CURLOPT_HTTPHEADER, $parsed);
     }
 
+      // ******* DAREN ADDITIONS ********
+      
+      // Loosen security for allowing api usage?
+      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+      
+      
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $request->getRequestMethod());
     curl_setopt($ch, CURLOPT_USERAGENT, $request->getUserAgent());
     $respData = curl_exec($ch);

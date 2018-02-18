@@ -65,7 +65,7 @@ require_once('service/Google_MediaFileUpload.php');
  * @author Chris Chabot <chabotc@google.com>
  * @author Chirag Shah <chirags@google.com>
  */
-class Google_Client {
+class Google_Client_2 {
   /**
    * @static
    * @var Google_Auth $auth
