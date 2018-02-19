@@ -20,9 +20,9 @@ require_once './src/google-api-php-client/src/Google/Client.php';
  * Configuration and setup Google API
  */
 // *** Daren: I used my keys, feeel free to swap
-$clientId = '563792370353-4fd3jjjdv4so0bn7qdhsdjvg00bep8ds.apps.googleusercontent.com'; //Google client ID
-$clientSecret = 'LiC63ETjmukpIxsg72pmUXxX'; //Google client secret
-$redirectURL = 'http://localhost:2000/IFitFeb13/BCITFitnessScheduler/Recreation.php'; //Callback URL
+$clientId = '563792370353-rt8ebr930h5ug6o1pqtgktgn2j5upm9a.apps.googleusercontent.com'; //Google client ID
+$clientSecret = 'lf_EArd8sKiQ9L08x4et9X2J'; //Google client secret
+$redirectURL = 'http://localhost/IFitFeb13/BCITFitnessScheduler/Recreation.php'; //Callback URL
 
 //Call Google API
 $gClient = new Google_Client();
