@@ -89,13 +89,34 @@ if ($gClient->getAccessToken()) {
     if (count($results->getItems()) == 0) {
       print "No upcoming events found.\n";
     } else {
+    
+        $allTheEvents = array();
       print "Upcoming events:<br/><br/>";
       foreach ($results->getItems() as $event) {
+          
+          // grab the start and end dates.  
         $start = $event->start->dateTime;
+        $end = $event->end->dateTime;
+          
+          // split the DATE with TIME.
+        $newStart = substr($start, 0, 10);
+        $newEnd = substr($end, 0, 10);
+        $newStartTime = substr($start, 11, 5);
+        $newEndTime = substr($end, 11, 5);
+          
+          // save the users organized event details
+          // into an array for display use.
+//        class TheEvent {
+//            public function setTheDate() {
+//                
+//            }
+//        }
+//        array_push($allTheEvents, )
+          
         if (empty($start)) {
           $start = $event->start->date;
         }
-        printf("%s (%s)<br/>", $event->getSummary(), $start);
+        printf("Summary: <strong>%s</strong><br/> Start Date: %s<br/>End Date: %s<br/> Start Time: %s<br/>End Time: %s<br/><br/>", $event->getSummary(), $newStart, $newEnd, $newStartTime, $newEndTime);
       }
     }
     
