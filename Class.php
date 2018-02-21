@@ -194,6 +194,9 @@ if ($gClient->getAccessToken()) {
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
+    
+<!-- adding script to handle POSTING an event -->
+<script src='./js/class_script.js'></script>
 
 </body>
 </html>
