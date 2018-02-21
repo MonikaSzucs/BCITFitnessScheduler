@@ -175,6 +175,7 @@ if ($gClient->getAccessToken()) {
           </div>
         </div>
         <div class="col-sm-6 text-center">
+            <!--      **** Change to POST .php file *** to add calender event from our database **** TODO **********************************     -->
           <a href="Schedule.php">
             <button>Join</button>
             <button>Leave</button>
