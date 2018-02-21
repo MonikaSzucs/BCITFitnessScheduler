@@ -5,23 +5,19 @@
     // credentials.
 
     $event = new Google_Service_Calendar_Event(array(
-        'summary' => 'Google I/O 2015',
-        'location' => '800 Howard St., San Francisco, CA 94103',
-        'description' => 'A chance to hear more about Google\'s developer products.',
+        'summary' => 'Tai Chi',
+        'location' => '3700 Willingdon Ave, Burnaby, BC V5G 3H2',
+        'description' => 'an internal Chinese martial art practiced for both its defense training and its health benefits. The term taiji refers to a philosophy of the forces of yin and yang, related to the moves. Though originally conceived as a martial art, it is also typically practiced for a variety of other personal reasons: competitive wrestling in the format of pushing hands , demonstration competitions, and achieving greater longevity. As a result, a multitude of training forms exist, both traditional and modern, which correspond to those aims with differing emphasis. Some training forms of are especially known for being practiced with relatively slow movements.',
         'start' => array(
-        'dateTime' => '2015-05-28T09:00:00-07:00',
-        'timeZone' => 'America/Los_Angeles',
+        'dateTime' => '2018-02-23T13:00:00-08:00',
+        'timeZone' => 'America/Vancouver',
       ),
       'end' => array(
-        'dateTime' => '2015-05-28T17:00:00-07:00',
-        'timeZone' => 'America/Los_Angeles',
-      ),
-      'recurrence' => array(
-        'RRULE:FREQ=DAILY;COUNT=2'
+        'dateTime' => '2018-02-23T14:00:00-08:00',
+        'timeZone' => 'America/Vancouver',
       ),
       'attendees' => array(
-        array('email' => 'lpage@example.com'),
-        array('email' => 'sbrin@example.com'),
+        array('email' => 'darencapacio@gmail.com')
       ),
       'reminders' => array(
         'useDefault' => FALSE,
