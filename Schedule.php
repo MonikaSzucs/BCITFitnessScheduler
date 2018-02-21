@@ -106,12 +106,13 @@ if ($gClient->getAccessToken()) {
           
           // save the users organized event details
           // into an array for display use.
-//        class TheEvent {
-//            public function setTheDate() {
-//                
-//            }
-//        }
-//        array_push($allTheEvents, )
+        $newEvent = array(
+            'sDate' => $newStart,
+            'eDate' => $newEnd,
+            'sTime' => $newStartTime,
+            'eTime' => $newEndTime
+        );
+        array_push($allTheEvents, $newEvent);
           
         if (empty($start)) {
           $start = $event->start->date;
