@@ -42,9 +42,9 @@ if ($gClient->getAccessToken()) {
         'link'          => $gpUserProfile['link']
     );
 
-		echo "<pre>";
-		print_r($gpUserData);
-		echo "</pre>";
+//		echo "<pre>";
+//		print_r($gpUserData);
+//		echo "</pre>";
 
     $userData = $user->checkUser($gpUserData);
 

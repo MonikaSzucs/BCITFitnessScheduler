@@ -33,9 +33,9 @@ if ($gClient->getAccessToken()) {
         'link'          => $gpUserProfile['link']
     );
 
-		echo "<pre>";
-		print_r($gpUserData);
-		echo "</pre>";
+//		echo "<pre>";
+//		print_r($gpUserData);
+//		echo "</pre>";
 
     $userData = $user->checkUser($gpUserData);
 
@@ -156,23 +156,23 @@ if ($gClient->getAccessToken()) {
 
     <div class="row content">
       <div class="col-sm-4 text-center" id="subIcons">
-          <a href="Class.php">
+          <a href="Tai_Chi.php">
             <img src="Images/Tai_Chi.svg" class="center-block" alt="Tai_Chi" height="150" width="150">
             <span >Tai Chi</span>
           </a>
       </div>
       <div class="col-sm-4 text-center">
         <div class="text-center">
-          <a href="Class.php">
-            <img src="Images/study_stretch.svg" class="center-block" alt="Tai_Chi" height="150" width="150">
+          <a href="Study_Stretch.php">
+            <img src="Images/study_stretch.svg" class="center-block" alt="Study_Stretch" height="150" width="150">
             <span>Study Stretch</span>
           </a>
         </div>
       </div>
       <div class="col-sm-4 text-center">
-        <a href="Class.php">
-          <img src="Images/weekend_recovery_yoga.svg" class="center-block" alt="Tai_Chi" height="150" width="150">
-          <span>Weekend Recovery Yoga</span>
+        <a href="Weekend_Recovery.php">
+          <img src="Images/weekend_recovery_yoga.svg" class="center-block" alt="Weekend_Recovery_Yoga" height="150" width="150">
+          <span>Weekend Recovery</span>
         </a>
       </div>
     </div>
@@ -180,23 +180,23 @@ if ($gClient->getAccessToken()) {
 
     <div class="row content">
       <div class="col-sm-4 text-center" id="subIcons">
-        <a href="Class.php">
-          <img src="Images/CTC.svg" class="center-block" alt="Tai_Chi" height="150" width="150">
+        <a href="CTC.php">
+          <img src="Images/CTC.svg" class="center-block" alt="CTC" height="150" width="150">
           <span >CTC</span>
         </a>
       </div>
       <div class="col-sm-4 text-center">
         <div class="text-center">
-          <a href="Class.php">
-            <img src="Images/Mui_Tai_Kickboxing.svg" class="center-block" alt="Tai_Chi" height="150" width="150">
+          <a href="Mui_Tai_Kickboxing.php">
+            <img src="Images/Mui_Tai_Kickboxing.svg" class="center-block" alt="Mui_Tai_Kickboxing" height="150" width="150">
             <span>Mui Tai Kickboxing</span>
           </a>
         </div>
       </div>
       <div class="col-sm-4 text-center">
-        <a href="Class.php">
-          <img src="Images/Ladies_Who_Life.svg" class="center-block" alt="Tai_Chi" height="150" width="150">
-          <span>Ladies Who Life</span>
+        <a href="Ladies_Who_Lift.php">
+          <img src="Images/Ladies_Who_Life.svg" class="center-block" alt="Ladies_Who_Lift" height="150" width="150">
+          <span>Ladies Who Lift</span>
         </a>
       </div>
     </div>
