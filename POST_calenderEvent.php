@@ -80,21 +80,69 @@ if ($gClient->getAccessToken()) {
     
     // create a service object.
     $service = new Google_Service_Calendar($gClient);
+    
+    // connect to database (rec table) here ********
+    try {
+        // Config setup
+        $servername = 'localhost';
+        $dbname = 'googlelogin';
+        $dblogin = 'root';
+        $password = 'root';
+        
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $dblogin, $password);
+
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
+        // Query for appropriate class.
+        // ** TO BE USED IN CALENDAR EVENT ADDING ********
+        $theClass = $_POST['class'];
+        switch ($theClass) {
+            case 'tai_chi':
+                $theRow = 1;
+                break;
+            case 'study_stretch':
+                $theRow = 2;
+                break;
+            case 'weekend_recovery':
+                $theRow = 3;
+                break;
+            case 'ctc':
+                $theRow = 4;
+                break;
+            case 'mui_tai_kickboxing':
+                $theRow = 5;
+                break;
+            case 'ladies_who_lift':
+                $theRow = 6;
+                break;
+        }
+        $sql = "SELECT name, location, description, startTime, endTime FROM recreations WHERE ID=$theRow";
+        $statement = $conn->prepare($sql);
+        $statement->execute();
+        $theRec = $statement->fetchAll(PDO::FETCH_ASSOC);
+        
+    } catch(PDOException $e) {
+        $error = $e->getMessage();
+        echo "Error: $e";
+    }
+    
+    
     // ***** SETUP ADDING AN EVENT *****
     $event = new Google_Service_Calendar_Event(array(
-        'summary' => 'Tai Chi',
-        'location' => '3700 Willingdon Ave, Burnaby, BC V5G 3H2',
-        'description' => 'an internal Chinese martial art practiced for both its defense training and its health benefits. The term taiji refers to a philosophy of the forces of yin and yang, related to the moves. Though originally conceived as a martial art, it is also typically practiced for a variety of other personal reasons: competitive wrestling in the format of pushing hands , demonstration competitions, and achieving greater longevity. As a result, a multitude of training forms exist, both traditional and modern, which correspond to those aims with differing emphasis. Some training forms of are especially known for being practiced with relatively slow movements.',
+        'summary' => $theRec[0]['name'],
+        'location' => $theRec[0]['location'],
+        'description' => $theRec[0]['description'],
         'start' => array(
-        'dateTime' => '2018-02-26T13:00:00-08:00',
+        'dateTime' => $theRec[0]['startTime'],
         'timeZone' => 'America/Vancouver',
       ),
       'end' => array(
-        'dateTime' => '2018-02-26T14:00:00-08:00',
+        'dateTime' => $theRec[0]['endTime'],
         'timeZone' => 'America/Vancouver',
       ),
       'attendees' => array(
-        array('email' => 'darencapacio@gmail.com')
+        array('email' => $userData['email'])
       ),
       'reminders' => array(
         'useDefault' => FALSE,
