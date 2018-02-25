@@ -69,6 +69,10 @@ if ($gClient->getAccessToken()) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css">
+    
+    <!-- *** Jessie's Map styling ***  -->
+    <link href="./css/map.css" type="text/css" rel="stylesheet">
+    
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="css/Main.css"></script>
@@ -147,7 +151,7 @@ if ($gClient->getAccessToken()) {
     </div>
     <div id="container" class="col-sm-8 text-left">
       <div class="text-center">
-        <h1>Mui Thai Kick Boxing</h1>
+        <h1 id='title'>Mui Thai Kick Boxing</h1>
         <a href='Recreation.php'>
             <p> < back</p>
         </a>
@@ -164,19 +168,27 @@ if ($gClient->getAccessToken()) {
         </div>
 
         <div class="col-sm-5 text-center" id="subIcons">
-          Video here
-          <p style="margin-top: 300px;">Video Description</p>
+          <!--     ******     Video here   -->
+            <iframe id='vid' width="300" height="215" src="" frameborder="0" allowfullscreen></iframe>
+          <p id='vidDesc' style="margin-top: 30px;">Video Description</p>
         </div>
       </div>
 
       <div class="row content">
         <div class="col-sm-3 text-center" id="subIcons">
-            When?
+            <strong>When:</strong>
+            <br/>
+            March 2, 2018
+            <br/>
+            3:00pm - 4:00pm
         </div>
         <div class="col-sm-3 text-center">
           <div class="text-center">
-            Location
+            <strong>Location</strong>
+            <br/>
           </div>
+            <!--     **** DISPLAY MAP HERE       -->
+            <div id='map'></div>
         </div>
         <div class="col-sm-6 text-center">
             <!--      **** Change to POST .php file *** to add calender event from our database **** TODO **********************************     -->
@@ -199,6 +211,15 @@ if ($gClient->getAccessToken()) {
     
 <!-- adding script to handle POSTING an event -->
 <script src='./js/class_script.js'></script>
+    
+<!--  Add scripts for map API -->
+<script src="./js/map.js" type="text/javascript"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjP-dp52vvMK45w1rHQjczdPfm7YtvvLk&callback=initMap">
+</script>
+    
+<!-- *** ADD script for YouTube API -->
+<script src='./js/youtube_script.js'></script>
 
 </body>
 </html>
