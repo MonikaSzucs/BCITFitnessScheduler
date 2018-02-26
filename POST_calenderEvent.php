@@ -158,6 +158,10 @@ if ($gClient->getAccessToken()) {
     
     echo 'EVENT ADDED';
     
+    // ****** SAVE EVENT ID and iCalUID IN THE DB HERE
+    // ************************************************
+    // ************************************************
+    
     } else {
       $newURL = "index.php";
       header('Location: '.$newURL);
