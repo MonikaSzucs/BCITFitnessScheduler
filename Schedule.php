@@ -107,6 +107,8 @@ if ($gClient->getAccessToken()) {
           // save the users organized event details
           // into an array for display use.
         $newEvent = array(
+            'id' => $event->id,
+            'iCalUID' => $event->iCalUID,
             'sumy' => $event->getSummary(),
             'sDate' => $newStart,
             'eDate' => $newEnd,
