@@ -127,6 +127,16 @@ if ($gClient->getAccessToken()) {
           }
           echo "<br/>";
       }
+        
+        // test $allTheEvents
+        echo "<br/>";
+        foreach ($allTheEvents as $key => $anEvent) {
+            echo "[$key]<br/>";
+            // must loop here too.
+            foreach ($anEvent as $sKey => $data) {
+                echo "[$sKey] => $data <br/>";
+            }
+        }
     }
     
 } else {
@@ -234,13 +244,28 @@ if ($gClient->getAccessToken()) {
                 // insert 17 time rows.
                 $theHour = 5;
                 $timetable = '';
+            
                 for ($i = 0; $i < 17; $i++) {
                     $newRow = '<tr>';
                     $theTime = $theHour . ':00';
                     for ($j = 0; $j < 6; $j++) {
+                        // this space will create one cell!
+                        
                         if ($j == 0) {
                             $newRow .= "<td>$theTime</td>";
-                        } else {
+                        } 
+                        
+                        // loop through events
+                        // to check if it matchs:
+                        //      - day of the week
+                        //      - time of row
+                        
+//                        foreach ($allTheEvents as $anEvent) {
+//                            
+//                        }
+                        
+                        // **** deprecate for now
+                        else {
                             $newRow .= '<td></td>';
                         }
                     }
@@ -248,6 +273,7 @@ if ($gClient->getAccessToken()) {
                     $theHour++;
                     $timetable .= $newRow;
                 }
+            
                 echo $timetable;
             ?>
         </table>
