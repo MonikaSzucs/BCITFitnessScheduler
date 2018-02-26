@@ -118,6 +118,14 @@ if ($gClient->getAccessToken()) {
           $start = $event->start->date;
         }
         printf("Summary: <strong>%s</strong><br/> Start Date: %s<br/>End Date: %s<br/> Start Time: %s<br/>End Time: %s<br/><br/>", $event->getSummary(), $newStart, $newEnd, $newStartTime, $newEndTime);
+          
+        // TESTING GETDATE
+        // Converts date to useful information!!!!!
+          echo "UNIX timestamp: " . strtotime($newStart) . "<br/>";
+          foreach (getdate(strtotime($newStart)) as $key => $data) {
+              echo "[$key] => $data <br/>";
+          }
+          echo "<br/>";
       }
     }
     
