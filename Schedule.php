@@ -107,6 +107,7 @@ if ($gClient->getAccessToken()) {
           // save the users organized event details
           // into an array for display use.
         $newEvent = array(
+            'sumy' => $event->getSummary(),
             'sDate' => $newStart,
             'eDate' => $newEnd,
             'sTime' => $newStartTime,
@@ -250,9 +251,11 @@ if ($gClient->getAccessToken()) {
                     $theTime = $theHour . ':00';
                     for ($j = 0; $j < 6; $j++) {
                         // this space will create one cell!
+                        // j coincidentally is the week day!
                         
                         if ($j == 0) {
                             $newRow .= "<td>$theTime</td>";
+                            continue;
                         } 
                         
                         // loop through events
@@ -260,14 +263,24 @@ if ($gClient->getAccessToken()) {
                         //      - day of the week
                         //      - time of row
                         
-//                        foreach ($allTheEvents as $anEvent) {
-//                            
-//                        }
-                        
-                        // **** deprecate for now
-                        else {
-                            $newRow .= '<td></td>';
+                        foreach ($allTheEvents as $anEvent) {
+                            $temp = strtotime($anEvent['sDate']);
+                            $dateHolder = getdate($temp);
+                            
+                            if ($dateHolder['wday'] == $j) {
+                                if ($anEvent['sTime'] == $theTime) {
+                                    // MATCH ***
+                                    // Display event in this cell!
+                                    $sumy = $anEvent['sumy'];
+                                    $newRow .= "<td style='background-color: yellow;'>
+                                                    $sumy
+                                                </td>";
+                                    continue;
+                                }
+                            }
                         }
+                        
+                        $newRow .= '<td></td>';
                     }
                     $newRow .= '</tr>';
                     $theHour++;
