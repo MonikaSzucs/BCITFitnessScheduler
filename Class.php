@@ -178,8 +178,6 @@ if ($gClient->getAccessToken()) {
 					</h1>
 
 
-
-
         <a href='Recreation.php'>
             <p> < back</p>
         </a>
