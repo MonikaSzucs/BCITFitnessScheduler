@@ -76,9 +76,6 @@ if ($gClient->getAccessToken()) {
 
 
             <div class="text-center">
-                <a href="Recreation.php">
-                    <button>Enter</button>
-                </a>
 								<div><?php echo $output; ?></div>
             </div>
           </div>
