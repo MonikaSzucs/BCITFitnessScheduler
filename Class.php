@@ -33,9 +33,9 @@ if ($gClient->getAccessToken()) {
         'link'          => $gpUserProfile['link']
     );
 
-		echo "<pre>";
-		print_r($gpUserData);
-		echo "</pre>";
+//		echo "<pre>";
+//		print_r($gpUserData);
+//		echo "</pre>";
 
     $userData = $user->checkUser($gpUserData);
 
@@ -69,6 +69,11 @@ if ($gClient->getAccessToken()) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/Main.css">
+
+    <!-- *** Jessie's Map styling ***  -->
+    <link href="./css/map.css" type="text/css" rel="stylesheet">
+
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="css/Main.css"></script>
@@ -125,13 +130,13 @@ if ($gClient->getAccessToken()) {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php">Logo</a>
+      <a class="navbar-brand" href="index.php"><img src="Icons/IFitLogo.svg" class="center-block" alt="Study_Stretch" height="75" width="75"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
 
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right tabStyle">
         <li><a href="Recreation.php">Recreation</a></li>
         <li><a href="Schedule.php">Schedule</a></li>
 		<li><a href="logout.php">Logout</a></li>
@@ -147,40 +152,106 @@ if ($gClient->getAccessToken()) {
     </div>
     <div id="container" class="col-sm-8 text-left">
       <div class="text-center">
-        <h1>Tai Chi</h1>
-        <p> < back</p>
+        <h1 id='title'>
+
+					<?php
+							if($_GET['recreation'] === "TaiChi"){
+								echo "Tai Chi";
+							}
+							else if($_GET['recreation'] === "StudyStretch"){
+								echo "Study Stretch";
+							}
+							else if($_GET['recreation'] === "WeekendRecovery"){
+								echo "Weekend Recovery";
+							}
+							else if($_GET['recreation'] === "CTC"){
+								echo "CTC";
+							}
+							else if($_GET['recreation'] === "MuiTaiKickboxing"){
+								echo "Mui Tai Kickboxing";
+							}
+							else if($_GET['recreation'] === "LadiesWhoLift"){
+								echo "Ladies Who Lift";
+							}
+					 ?>
+
+					</h1>
+
+
+
+
+        <a href='Recreation.php'>
+            <p> < back</p>
+        </a>
       </div>
 
       <div class="row content">
         <div class="col-sm-5 text-center" id="subIcons">
           <h3>Course Outline</h3>
-          <p>TAi chi is.....</p>
+            <p>
+                Ready to shape various aspects of your lives? This class will motivate, build confidence, develop competence and self-esteem, knowledge and understanding of the importance of physical activity in maintaining health and enhance the quality of life!
+            </p>
         </div>
         <div class="col-sm-2 text-center" id="subIcons">
         </div>
 
         <div class="col-sm-5 text-center" id="subIcons">
-          Video here
-          <p style="margin-top: 300px;">video Description</p>
+          <!--     ******     Video here   -->
+            <iframe id='vid' width="300" height="215" src="" frameborder="0" allowfullscreen></iframe>
+          <p id='vidDesc' style="margin-top: 30px;">Video Description</p>
         </div>
       </div>
 
       <div class="row content">
         <div class="col-sm-3 text-center" id="subIcons">
-            When?
+            <strong>When:</strong>
+            <br/>
+            February 27, 2018
+            <br/>
+            11:00am - 12:00pm
         </div>
         <div class="col-sm-3 text-center">
           <div class="text-center">
-            Location
+            <strong>Location</strong>
+            <br/>
           </div>
+            <!--     **** DISPLAY MAP HERE       -->
+            <div id='map'></div>
         </div>
         <div class="col-sm-6 text-center">
             <!--      **** Change to POST .php file *** to add calender event from our database **** TODO **********************************     -->
             <!--      **** Need to utilize javascript ****      -->
-          <a href="Schedule.php">
-            <button>Join</button>
+
+						<?php
+								if($_GET['recreation'] === "TaiChi"){
+									echo "<button onClick='addTaiChi()'>Join</button>";
+									echo "<script>console.log( 'TaiChi' );</script>";
+								}
+								else if($_GET['recreation'] === "StudyStretch"){
+									echo "<button onClick='addStudyStretch()'>Join</button>";
+									echo "<script>console.log( 'addStudyStretch' );</script>";
+								}
+								else if($_GET['recreation'] === "WeekendRecovery"){
+									echo "<button onClick='addWeekendRecovery()'>Join</button>";
+									echo "<script>console.log( 'addWeekendRecovery' );</script>";
+								}
+								else if($_GET['recreation'] === "CTC"){
+									echo "<button onClick='addCTC()'>Join</button>";
+									echo "<script>console.log( 'addCTC' );</script>";
+								}
+								else if($_GET['recreation'] === "MuiTaiKickboxing"){
+									echo "<button onClick='addMuiTaiKickboxing()'>Join</button>";
+									echo "<script>console.log( 'addMuiTaiKickboxing' );</script>";
+								}
+								else if($_GET['recreation'] === "LadiesWhoLift"){
+									echo "<button onClick='addLadiesWhoLift()'>Join</button>";
+									echo "<script>console.log( 'addLadiesWhoLift' );</script>";
+								}
+
+						 ?>
+
+
             <button>Leave</button>
-          </a>
         </div>
       </div>
 
@@ -194,9 +265,61 @@ if ($gClient->getAccessToken()) {
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
-    
+
 <!-- adding script to handle POSTING an event -->
 <script src='./js/class_script.js'></script>
+
+<!--  Add scripts for map API -->
+<script src="./js/map.js" type="text/javascript"></script>
+
+<?php
+		if($_GET['recreation'] === "TaiChi"){
+			echo "<script async defer
+			    src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCjP-dp52vvMK45w1rHQjczdPfm7YtvvLk&callback=initMap'>
+			</script>";
+			echo "<script>console.log( 'TaiChi' );</script>";
+		}
+		else if($_GET['recreation'] === "StudyStretch"){
+			echo "<script async defer
+			    src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCjP-dp52vvMK45w1rHQjczdPfm7YtvvLk&callback=initMap'>
+			</script>";
+			echo "<script>console.log( 'StudyStretch' );</script>";
+		}
+		else if($_GET['recreation'] === "WeekendRecovery"){
+			echo "<script async defer
+			    src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCjP-dp52vvMK45w1rHQjczdPfm7YtvvLk&callback=initMap'>
+			</script>";
+			echo "<script>console.log( 'WeekendRecovery' );</script>";
+		}
+		else if($_GET['recreation'] === "CTC"){
+			echo "<script async defer
+			    src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCjP-dp52vvMK45w1rHQjczdPfm7YtvvLk&callback=initMap'>
+			</script>";
+			echo "<script>console.log( 'CTC' );</script>";
+		}
+		else if($_GET['recreation'] === "MuiTaiKickboxing"){
+			echo "<script async defer
+			    src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCjP-dp52vvMK45w1rHQjczdPfm7YtvvLk&callback=initMap'>
+			</script>";
+			echo "<script>console.log( 'MuiTaiKickboxing' );</script>";
+		}
+		else if($_GET['recreation'] === "LadiesWhoLift"){
+			echo "<script async defer
+			    src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCjP-dp52vvMK45w1rHQjczdPfm7YtvvLk&callback=initMap'>
+			</script>";
+			echo "<script>console.log( 'LadiesWhoLift' );</script>";
+		}
+
+ ?>
+
+<!--<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjP-dp52vvMK45w1rHQjczdPfm7YtvvLk&callback=initMap">
+</script>
+-->
+
+
+<!-- *** ADD script for YouTube API -->
+<script src='./js/youtube_script.js'></script>
 
 </body>
 </html>

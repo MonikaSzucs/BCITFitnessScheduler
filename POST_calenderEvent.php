@@ -70,30 +70,30 @@ if ($gClient->getAccessToken()) {
     }else{
         $output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
     }
-    
+
     // WITH THE ACCESS TOKEN DISPLAY THE CALENDAR
     // YOU CAN DO IT!!! (done!)
     // ******** Daren's Work ********
-    
+
     // ****** NEEDS WORK:
     //          - Need to correctly display events
-    
+
     // create a service object.
     $service = new Google_Service_Calendar($gClient);
-    
+
     // connect to database (rec table) here ********
     try {
         // Config setup
         $servername = 'localhost';
         $dbname = 'googlelogin';
         $dblogin = 'root';
-        $password = 'root';
-        
+        $password = '';
+
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $dblogin, $password);
 
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
+
         // Query for appropriate class.
         // ** TO BE USED IN CALENDAR EVENT ADDING ********
         $theClass = $_POST['class'];
@@ -121,13 +121,13 @@ if ($gClient->getAccessToken()) {
         $statement = $conn->prepare($sql);
         $statement->execute();
         $theRec = $statement->fetchAll(PDO::FETCH_ASSOC);
-        
+
     } catch(PDOException $e) {
         $error = $e->getMessage();
         echo "Error: $e";
     }
-    
-    
+
+
     // ***** SETUP ADDING AN EVENT *****
     $event = new Google_Service_Calendar_Event(array(
         'summary' => $theRec[0]['name'],
@@ -155,13 +155,13 @@ if ($gClient->getAccessToken()) {
 
     $calendarId = 'primary';
     $event = $service->events->insert($calendarId, $event);
-    
+
     echo 'EVENT ADDED';
-    
+
     // ****** SAVE EVENT ID and iCalUID IN THE DB HERE
     // ************************************************
     // ************************************************
-    
+
     } else {
       $newURL = "index.php";
       header('Location: '.$newURL);

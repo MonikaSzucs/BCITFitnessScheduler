@@ -66,14 +66,14 @@ if ($gClient->getAccessToken()) {
     }else{
         $output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
     }
-    
+
     // WITH THE ACCESS TOKEN DISPLAY THE CALENDAR
     // YOU CAN DO IT!!! (done!)
     // ******** Daren's Work ********
-    
+
     // ****** NEEDS WORK:
     //          - Need to correctly display events
-    
+
     // create a service object.
     $service = new Google_Service_Calendar($gClient);
     // Print the next 10 events on the user's calendar.
@@ -89,21 +89,21 @@ if ($gClient->getAccessToken()) {
     if (count($results->getItems()) == 0) {
       print "No upcoming events found.\n";
     } else {
-    
+
         $allTheEvents = array();
       print "Upcoming events:<br/><br/>";
       foreach ($results->getItems() as $event) {
-          
-          // grab the start and end dates.  
+
+          // grab the start and end dates.
         $start = $event->start->dateTime;
         $end = $event->end->dateTime;
-          
+
           // split the DATE with TIME.
         $newStart = substr($start, 0, 10);
         $newEnd = substr($end, 0, 10);
         $newStartTime = substr($start, 11, 5);
         $newEndTime = substr($end, 11, 5);
-          
+
           // save the users organized event details
           // into an array for display use.
         $newEvent = array(
@@ -116,12 +116,12 @@ if ($gClient->getAccessToken()) {
             'eTime' => $newEndTime
         );
         array_push($allTheEvents, $newEvent);
-          
+
         if (empty($start)) {
           $start = $event->start->date;
         }
         printf("Summary: <strong>%s</strong><br/> Start Date: %s<br/>End Date: %s<br/> Start Time: %s<br/>End Time: %s<br/><br/>", $event->getSummary(), $newStart, $newEnd, $newStartTime, $newEndTime);
-          
+
         // TESTING GETDATE
         // Converts date to useful information!!!!!
           echo "UNIX timestamp: " . strtotime($newStart) . "<br/>";
@@ -130,7 +130,7 @@ if ($gClient->getAccessToken()) {
           }
           echo "<br/>";
       }
-        
+
         // test $allTheEvents
         echo "<br/>";
         foreach ($allTheEvents as $key => $anEvent) {
@@ -141,7 +141,7 @@ if ($gClient->getAccessToken()) {
             }
         }
     }
-    
+
 } else {
   $newURL = "index.php";
   header('Location: '.$newURL);
@@ -154,6 +154,7 @@ if ($gClient->getAccessToken()) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/Main.css">
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="css/Main.css"></script>
@@ -210,13 +211,13 @@ if ($gClient->getAccessToken()) {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php">Logo</a>
+      <a class="navbar-brand" href="index.php"><img src="Icons/IFitLogo.svg" class="center-block" alt="Study_Stretch" height="75" width="75"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
 
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right tabStyle">
         <li><a href="Recreation.php">Recreation</a></li>
         <li><a href="Schedule.php">Schedule</a></li>
 		<li><a href="logout.php">Logout</a></li>
@@ -247,28 +248,28 @@ if ($gClient->getAccessToken()) {
                 // insert 17 time rows.
                 $theHour = 5;
                 $timetable = '';
-            
+
                 for ($i = 0; $i < 17; $i++) {
                     $newRow = '<tr>';
                     $theTime = $theHour . ':00';
                     for ($j = 0; $j < 6; $j++) {
                         // this space will create one cell!
                         // j coincidentally is the week day!
-                        
+
                         if ($j == 0) {
                             $newRow .= "<td>$theTime</td>";
                             continue;
-                        } 
-                        
+                        }
+
                         // loop through events
                         // to check if it matchs:
                         //      - day of the week
                         //      - time of row
-                        
+
                         foreach ($allTheEvents as $anEvent) {
                             $temp = strtotime($anEvent['sDate']);
                             $dateHolder = getdate($temp);
-                            
+
                             if ($dateHolder['wday'] == $j) {
                                 if ($anEvent['sTime'] == $theTime) {
                                     // MATCH ***
@@ -281,14 +282,14 @@ if ($gClient->getAccessToken()) {
                                 }
                             }
                         }
-                        
+
                         $newRow .= '<td></td>';
                     }
                     $newRow .= '</tr>';
                     $theHour++;
                     $timetable .= $newRow;
                 }
-            
+
                 echo $timetable;
             ?>
         </table>

@@ -69,10 +69,12 @@ if ($gClient->getAccessToken()) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css">
-    
+	<link rel="stylesheet" href="css/Main.css">
+
 <!-- *** Jessie's Map styling ***  -->
     <link href="./css/map.css" type="text/css" rel="stylesheet">
-    
+
+
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="css/Main.css"></script>
@@ -129,13 +131,13 @@ if ($gClient->getAccessToken()) {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php">Logo</a>
+      <a class="navbar-brand" href="index.php"><img src="Icons/IFitLogo.svg" class="center-block" alt="IFit" height="75" width="75"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
 
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right tabStyle">
         <li><a href="Recreation.php">Recreation</a></li>
         <li><a href="Schedule.php">Schedule</a></li>
 		<li><a href="logout.php">Logout</a></li>
@@ -208,16 +210,16 @@ if ($gClient->getAccessToken()) {
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
-    
+
 <!-- adding script to handle POSTING an event -->
 <script src='./js/class_script.js'></script>
-    
+
 <!--  Add scripts for map API -->
 <script src="./js/map.js" type="text/javascript"></script>
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjP-dp52vvMK45w1rHQjczdPfm7YtvvLk&callback=initMap">
 </script>
-    
+
 <!-- *** ADD script for YouTube API -->
 <script src='./js/youtube_script.js'></script>
 

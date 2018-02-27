@@ -417,3 +417,77 @@ html, body {
   margin-top: 10px;
   margin-left: -35px;
 }
+
+.top-buffer { margin-top:10%; }
+
+#myNavbar {
+  text-align: right;
+}
+
+#container {
+  margin-top: 50px;
+}
+
+.textStyle {
+  padding-top: 10px;
+  display: block;
+  font-size: 20px;
+}
+
+.tabStyle{
+  font-size:20px;
+  margin-top: 30px;
+}
+
+#StudyStretch {
+
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 150px;
+        width: 150px;
+}
+
+#TaiChi {
+
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 150px;
+            width: 150px;
+}
+
+#WeekendRecovery {
+
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 150px;
+            width: 150px;
+}
+
+#CTC {
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 150px;
+            width: 150px;
+}
+
+#MuiTaiKickboxing {
+
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 150px;
+            width: 150px;
+}
+
+#LadiesWhoLift {
+
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 150px;
+            width: 150px;
+}

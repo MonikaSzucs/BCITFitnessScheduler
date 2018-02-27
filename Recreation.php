@@ -70,6 +70,7 @@ if ($gClient->getAccessToken()) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/Main.css">
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <style>
@@ -127,13 +128,13 @@ if ($gClient->getAccessToken()) {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php">Logo</a>
+      <a class="navbar-brand" href="index.php"><img src="Icons/IFitLogo.svg" class="center-block" alt="Study_Stretch" height="75" width="75"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
 
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right tabStyle" >
         <li><a href="Recreation.php">Recreation</a></li>
         <li><a href="Schedule.php">Schedule</a></li>
 		<li><a href="logout.php">Logout</a></li>
@@ -155,49 +156,60 @@ if ($gClient->getAccessToken()) {
 
 
     <div class="row content">
-      <div class="col-sm-4 text-center" id="subIcons">
-          <a href="Tai_Chi.php">
-            <img src="Images/Tai_Chi.svg" class="center-block" alt="Tai_Chi" height="150" width="150">
-            <span >Tai Chi</span>
-          </a>
+      <div class="col-sm-4 text-center top-buffer" id="subIcons">
+				<form action="Class.php" method="get" class="category_form">
+					<input type="hidden" name="recreation" value='TaiChi'/>
+					<input id="TaiChi" type="image" name="btn_opentextbox" src="Icons/Tai_Chi.svg" value="Submit" />
+					<span class="textStyle">Tai Chi</span>
+				</form>
       </div>
-      <div class="col-sm-4 text-center">
-        <div class="text-center">
-          <a href="Study_Stretch.php">
-            <img src="Images/study_stretch.svg" class="center-block" alt="Study_Stretch" height="150" width="150">
-            <span>Study Stretch</span>
-          </a>
-        </div>
+
+
+      <div class="col-sm-4 text-center top-buffer">
+					<form action="Class.php" method="get" class="category_form">
+
+						<input type="hidden" name="recreation" value='StudyStretch'/>
+						<input id="StudyStretch" type="image" name="btn_opentextbox" src="Icons/study_stretch.svg" value="Submit" />
+						<span class="textStyle">Study Stretch</span>
+					</form>
       </div>
-      <div class="col-sm-4 text-center">
-        <a href="Weekend_Recovery.php">
-          <img src="Images/weekend_recovery_yoga.svg" class="center-block" alt="Weekend_Recovery_Yoga" height="150" width="150">
-          <span>Weekend Recovery</span>
-        </a>
+
+
+      <div class="col-sm-4 text-center top-buffer">
+				<form action="Class.php" method="get" class="category_form">
+					<input type="hidden" name="recreation" value='WeekendRecovery'/>
+					<input id="WeekendRecovery" type="image" name="btn_opentextbox" src="Icons/weekend_recovery_yoga.svg" value="Submit" />
+					<span class="textStyle">Weekend Recovery</span>
+				</form>
       </div>
     </div>
 
 
     <div class="row content">
-      <div class="col-sm-4 text-center" id="subIcons">
-        <a href="CTC.php">
-          <img src="Images/CTC.svg" class="center-block" alt="CTC" height="150" width="150">
-          <span >CTC</span>
-        </a>
+      <div class="col-sm-4 text-center top-buffer" id="subIcons">
+				<form action="Class.php" method="get" class="category_form">
+					<input type="hidden" name="recreation" value='CTC'/>
+					<input id="CTC" type="image" name="btn_opentextbox" src="Icons/CTC.svg" value="Submit" />
+					<span class="textStyle">CTC</span>
+				</form>
+    </div>
+
+
+      <div class="col-sm-4 text-center top-buffer">
+				<form action="Class.php" method="get" class="category_form">
+					<input type="hidden" name="recreation" value='MuiTaiKickboxing'/>
+					<input id="MuiTaiKickboxing" type="image" name="btn_opentextbox" src="Icons/Mui_Tai_Kickboxing.svg" value="Submit" />
+					<span class="textStyle">Mui Tai Kickboxing</span>
+				</form>
       </div>
-      <div class="col-sm-4 text-center">
-        <div class="text-center">
-          <a href="Mui_Tai_Kickboxing.php">
-            <img src="Images/Mui_Tai_Kickboxing.svg" class="center-block" alt="Mui_Tai_Kickboxing" height="150" width="150">
-            <span>Mui Tai Kickboxing</span>
-          </a>
-        </div>
-      </div>
-      <div class="col-sm-4 text-center">
-        <a href="Ladies_Who_Lift.php">
-          <img src="Images/Ladies_Who_Life.svg" class="center-block" alt="Ladies_Who_Lift" height="150" width="150">
-          <span>Ladies Who Lift</span>
-        </a>
+
+
+      <div class="col-sm-4 text-center top-buffer">
+				<form action="Class.php" method="get" class="category_form">
+					<input type="hidden" name="recreation" value='LadiesWhoLift'/>
+					<input id="LadiesWhoLift" type="image" name="btn_opentextbox" src="Icons/Ladies_Who_Life.svg" value="Submit" />
+					<span class="textStyle">Ladies Who Lift</span>
+				</form>
       </div>
     </div>
 
