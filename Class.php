@@ -185,7 +185,7 @@ if ($gClient->getAccessToken()) {
 
       <div class="row content">
         <div class="col-sm-5 text-center" id="subIcons">
-          <h3>Course Outline</h3>
+          <strong>Course Outline</strong>
             <p>
 
 							<?php
@@ -253,7 +253,7 @@ if ($gClient->getAccessToken()) {
 							 ?>
 
             </p>
-						<p>
+						<p id="pSpace">
 							<strong>When:</strong>
 	            <br/>
 	            February 27, 2018

@@ -235,7 +235,7 @@ if ($gClient->getAccessToken()) {
         <h1>Schedule</h1>
     </div>
         <!--   ***** Daren Table addition *********   -->
-        <table border='1'>
+        <table border='1' class="top-buffer">
             <tr>
                 <th></th>
                 <th>Monday</th>
@@ -275,7 +275,7 @@ if ($gClient->getAccessToken()) {
                                     // MATCH ***
                                     // Display event in this cell!
                                     $sumy = $anEvent['sumy'];
-                                    $newRow .= "<td style='background-color: yellow;'>
+                                    $newRow .= "<td style='background-color: #fff;color:#053b7b'>
                                                     $sumy
                                                 </td>";
                                     continue;
