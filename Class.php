@@ -147,10 +147,10 @@ if ($gClient->getAccessToken()) {
 
 <div class="container-fluid text-center">
   <div class="row content">
-    <div class="col-sm-2">
+    <div class="col-sm-1">
 
     </div>
-    <div id="container" class="col-sm-8 text-left">
+    <div id="container" class="col-sm-10 text-left">
       <div class="text-center">
         <h1 id='title'>
 
@@ -187,28 +187,129 @@ if ($gClient->getAccessToken()) {
         <div class="col-sm-5 text-center" id="subIcons">
           <h3>Course Outline</h3>
             <p>
-                Ready to shape various aspects of your lives? This class will motivate, build confidence, develop competence and self-esteem, knowledge and understanding of the importance of physical activity in maintaining health and enhance the quality of life!
+
+							<?php
+							$servername = "localhost";
+							$username = "root";
+							$password = "";
+							$dbname = "googlelogin";
+
+
+								////connect to the database
+								$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+									// set the PDO error mode to exception
+								$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+									if($_GET['recreation'] === "TaiChi"){
+											$check = $conn->prepare("SELECT * FROM recreations WHERE name='TaiChi'");
+											$check->execute();
+											$users = $check->fetchAll();
+											foreach ($users as $user) {
+											    echo $user['description'] . '<br />';
+											}
+									}
+									else if($_GET['recreation'] === "StudyStretch"){
+											$check = $conn->prepare("SELECT * FROM recreations WHERE name='StudyStretch'");
+											$check->execute();
+											$users = $check->fetchAll();
+											foreach ($users as $user) {
+													echo $user['description'] . '<br />';
+											}
+									}
+									else if($_GET['recreation'] === "WeekendRecovery"){
+											$check = $conn->prepare("SELECT * FROM recreations WHERE name='WeekendRecovery'");
+											$check->execute();
+											$users = $check->fetchAll();
+											foreach ($users as $user) {
+													echo $user['description'] . '<br />';
+											}
+									}
+									else if($_GET['recreation'] === "CTC"){
+										$check = $conn->prepare("SELECT * FROM recreations WHERE name='CrossTrainChallenge'");
+										$check->execute();
+										$users = $check->fetchAll();
+										foreach ($users as $user) {
+												echo $user['description'] . '<br />';
+										};
+									}
+									else if($_GET['recreation'] === "MuiTaiKickboxing"){
+										$check = $conn->prepare("SELECT * FROM recreations WHERE name='MuiThaiKickBoxing'");
+										$check->execute();
+										$users = $check->fetchAll();
+										foreach ($users as $user) {
+												echo $user['description'] . '<br />';
+										};
+									}
+									else if($_GET['recreation'] === "LadiesWhoLift"){
+										$check = $conn->prepare("SELECT * FROM recreations WHERE name='LadiesWhoLift'");
+										$check->execute();
+										$users = $check->fetchAll();
+										foreach ($users as $user) {
+												echo $user['description'] . '<br />';
+										};
+									}
+
+							 ?>
+
             </p>
+						<p>
+							<strong>When:</strong>
+	            <br/>
+	            February 27, 2018
+	            <br/>
+	            11:00am - 12:00pm
+						</p>
         </div>
         <div class="col-sm-2 text-center" id="subIcons">
         </div>
 
         <div class="col-sm-5 text-center" id="subIcons">
           <!--     ******     Video here   -->
-            <iframe id='vid' width="300" height="215" src="" frameborder="0" allowfullscreen></iframe>
+            <iframe id='vid' class="marginSpace" width="300" height="215" src="" frameborder="0" allowfullscreen></iframe>
           <p id='vidDesc' style="margin-top: 30px;">Video Description</p>
+
+					<!--      **** Change to POST .php file *** to add calender event from our database **** TODO **********************************     -->
+					<!--      **** Need to utilize javascript ****      -->
+					<p>
+					<?php
+							if($_GET['recreation'] === "TaiChi"){
+								echo "<button onClick='addTaiChi()'>Join</button>";
+								echo "<script>console.log( 'TaiChi' );</script>";
+							}
+							else if($_GET['recreation'] === "StudyStretch"){
+								echo "<button onClick='addStudyStretch()'>Join</button>";
+								echo "<script>console.log( 'addStudyStretch' );</script>";
+							}
+							else if($_GET['recreation'] === "WeekendRecovery"){
+								echo "<button onClick='addWeekendRecovery()'>Join</button>";
+								echo "<script>console.log( 'addWeekendRecovery' );</script>";
+							}
+							else if($_GET['recreation'] === "CTC"){
+								echo "<button onClick='addCTC()'>Join</button>";
+								echo "<script>console.log( 'addCTC' );</script>";
+							}
+							else if($_GET['recreation'] === "MuiTaiKickboxing"){
+								echo "<button onClick='addMuiTaiKickboxing()'>Join</button>";
+								echo "<script>console.log( 'addMuiTaiKickboxing' );</script>";
+							}
+							else if($_GET['recreation'] === "LadiesWhoLift"){
+								echo "<button onClick='addLadiesWhoLift()'>Join</button>";
+								echo "<script>console.log( 'addLadiesWhoLift' );</script>";
+							}
+
+					 ?>
+
+
+					<button>Leave</button>
+					</p>
+
         </div>
       </div>
 
-      <div class="row content">
-        <div class="col-sm-3 text-center" id="subIcons">
-            <strong>When:</strong>
-            <br/>
-            February 27, 2018
-            <br/>
-            11:00am - 12:00pm
-        </div>
-        <div class="col-sm-3 text-center">
+      <div class="row">
+
+        <div class="col-sm-12 text-center marginSpace">
           <div class="text-center">
             <strong>Location</strong>
             <br/>
@@ -216,52 +317,19 @@ if ($gClient->getAccessToken()) {
             <!--     **** DISPLAY MAP HERE       -->
             <div id='map'></div>
         </div>
-        <div class="col-sm-6 text-center">
-            <!--      **** Change to POST .php file *** to add calender event from our database **** TODO **********************************     -->
-            <!--      **** Need to utilize javascript ****      -->
 
-						<?php
-								if($_GET['recreation'] === "TaiChi"){
-									echo "<button onClick='addTaiChi()'>Join</button>";
-									echo "<script>console.log( 'TaiChi' );</script>";
-								}
-								else if($_GET['recreation'] === "StudyStretch"){
-									echo "<button onClick='addStudyStretch()'>Join</button>";
-									echo "<script>console.log( 'addStudyStretch' );</script>";
-								}
-								else if($_GET['recreation'] === "WeekendRecovery"){
-									echo "<button onClick='addWeekendRecovery()'>Join</button>";
-									echo "<script>console.log( 'addWeekendRecovery' );</script>";
-								}
-								else if($_GET['recreation'] === "CTC"){
-									echo "<button onClick='addCTC()'>Join</button>";
-									echo "<script>console.log( 'addCTC' );</script>";
-								}
-								else if($_GET['recreation'] === "MuiTaiKickboxing"){
-									echo "<button onClick='addMuiTaiKickboxing()'>Join</button>";
-									echo "<script>console.log( 'addMuiTaiKickboxing' );</script>";
-								}
-								else if($_GET['recreation'] === "LadiesWhoLift"){
-									echo "<button onClick='addLadiesWhoLift()'>Join</button>";
-									echo "<script>console.log( 'addLadiesWhoLift' );</script>";
-								}
-
-						 ?>
-
-
-            <button>Leave</button>
-        </div>
       </div>
 
     </div>
-    <div class="col-sm-2">
 
-    </div>
   </div>
+	<div class="col-sm-1">
+
+	</div>
 </div>
 
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
+<footer class="container-fluid text-center marginSpace">
+  <p>IFit © 2018</p>
 </footer>
 
 <!-- adding script to handle POSTING an event -->

@@ -491,3 +491,7 @@ html, body {
             height: 150px;
             width: 150px;
 }
+
+.marginSpace {
+  margin-top: 30px;
+}
