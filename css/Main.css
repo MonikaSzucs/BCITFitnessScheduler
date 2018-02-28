@@ -209,11 +209,11 @@ html, body {
     position: absolute;
     margin-top: -60px;
     margin-left: -35px;
-    animation-delay: 5s;
+
     height: 64px;
     width: 75px;
     background-image: url("../Icons/LogoParts/TopStopper.svg");
-    opacity: 0;
+
 
     -webkit-animation: TopStopperAnimate 2s ease-out 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: TopStopperAnimate 2s ease-out 2s; /* Firefox < 16 */
@@ -230,11 +230,12 @@ html, body {
     to   {
       opacity: 1;
       top: 0px;
+      left: 50%;
     }
 }
 
 /* Firefox < 16 */
-@-moz-keyframes fadein {
+@-moz-keyframes TopStopperAnimate {
   from {
     opacity: 0;
     top: -200px;
@@ -242,11 +243,12 @@ html, body {
   to   {
     opacity: 1;
     top: 0px;
+    left: 50%;
   }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
+@-webkit-keyframes TopStopperAnimate {
   from {
     opacity: 0;
     top: -200px;
@@ -254,11 +256,12 @@ html, body {
   to   {
     opacity: 1;
     top: 0px;
+    left: 50%;
 }
 }
 
 /* Internet Explorer */
-@-ms-keyframes fadein {
+@-ms-keyframes TopStopperAnimate {
   from {
     opacity: 0;
     top: -200px;
@@ -266,11 +269,12 @@ html, body {
   to   {
     opacity: 1;
     top: 0px;
+    left: 50%;
   }
 }
 
 /* Opera < 12.1 */
-@-o-keyframes fadein {
+@-o-keyframes TopStopperAnimate {
   from {
     opacity: 0;
     top: -200px;
@@ -278,6 +282,7 @@ html, body {
   to   {
     opacity: 1;
     top: 0px;
+    left: 50%;
   }
 }
 
@@ -290,64 +295,81 @@ html, body {
   position: absolute;
   margin-top: 10px;
   margin-left: -35px;
+
+
+  -webkit-animation: LeftStopperAnimate 2s ease-out 2s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: LeftStopperAnimate 2s ease-out 2s; /* Firefox < 16 */
+      -ms-animation: LeftStopperAnimate 2s ease-out 2s; /* Internet Explorer */
+       -o-animation: LeftStopperAnimate 2s ease-out 2s; /* Opera < 12.1 */
+          animation: LeftStopperAnimate 2s ease-out 2s;
 }
 
-@keyframes TopStopperAnimate {
+@keyframes LeftStopperAnimate {
     from {
       opacity: 0;
       top: -200px;
+      left: -50%;
     }
     to   {
       opacity: 1;
       top: 0px;
+      left: 15%;
     }
 }
 
 /* Firefox < 16 */
-@-moz-keyframes fadein {
+@-moz-keyframes LeftStopperAnimate {
   from {
     opacity: 0;
     top: -200px;
+    left: -50%;
   }
   to   {
     opacity: 1;
     top: 0px;
+    left: 15%;
   }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
+@-webkit-keyframes LeftStopperAnimate {
   from {
     opacity: 0;
     top: -200px;
+    left: -50%;
   }
   to   {
     opacity: 1;
     top: 0px;
+    left: 15%;
 }
 }
 
 /* Internet Explorer */
-@-ms-keyframes fadein {
+@-ms-keyframes LeftStopperAnimate {
   from {
     opacity: 0;
     top: -200px;
+    left: -50%;
   }
   to   {
     opacity: 1;
     top: 0px;
+    left: 15%;
   }
 }
 
 /* Opera < 12.1 */
-@-o-keyframes fadein {
+@-o-keyframes LeftStopperAnimate {
   from {
     opacity: 0;
     top: -200px;
+    left: -50%;
   }
   to   {
     opacity: 1;
     top: 0px;
+    left: 15%;
   }
 }
 
@@ -360,15 +382,135 @@ html, body {
   position: absolute;
   margin-top: 10px;
   margin-left: -35px;
+  animation-delay: 5s;
+
+  -webkit-animation: RightStopperAnimate 2s ease-out 2s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: RightStopperAnimate 2s ease-out 2s; /* Firefox < 16 */
+      -ms-animation: RightStopperAnimate 2s ease-out 2s; /* Internet Explorer */
+       -o-animation: RightStopperAnimate 2s ease-out 2s; /* Opera < 12.1 */
+          animation: RightStopperAnimate 2s ease-out 2s;
 }
 
-#LongArm{
+
+@keyframes RightStopperAnimate {
+    from {
+      opacity: 0;
+      top: -200px;
+      left: 150%;
+    }
+    to   {
+      opacity: 1;
+      top: 0px;
+      left: 95%;
+    }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes RightStopperAnimate {
+  from {
+    opacity: 0;
+    top: -200px;
+    left: 150%;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+    left: 95%;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes RightStopperAnimate {
+  from {
+    opacity: 0;
+    top: -200px;
+    left: 150%;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+    left: 95%;
+}
+}
+
+/* Internet Explorer */
+@-ms-keyframes RightStopperAnimate {
+  from {
+    opacity: 0;
+    top: -200px;
+    left: 150%;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+    left: 95%;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes RightStopperAnimate {
+  from {
+    opacity: 0;
+    top: -200px;
+    left: 150%;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+    left: 95%;
+  }
+}
+
+
+
+#LogoArmLong{
   left: 75%;
   top: 10%;
   position: absolute;
   margin-top: 10px;
   margin-left: -35px;
+
+  -webkit-animation: spin1 2s ;
+  -moz-animation: spin1 2s ;
+  -o-animation: spin1 2s ;
+  -ms-animation: spin1 2s ;
+  animation: spin1 2s ;
+  display: block;
+
 }
+
+
+@-webkit-keyframes spin1 {
+0% { -webkit-transform: rotate(0deg);}
+100% { -webkit-transform: rotate(90deg);
+  transform-origin: top left;
+  }
+}
+@-moz-keyframes spin1 {
+0% { -moz-transform: rotate(0deg);}
+100% { -moz-transform: rotate(90deg);
+  transform-origin: top left;
+}
+}
+@-o-keyframes spin1 {
+0% { -o-transform: rotate(0deg);}
+100% { -o-transform: rotate(90deg);
+  transform-origin: top left;
+}
+}
+@-ms-keyframes spin1 {
+0% { -ms-transform: rotate(0deg);}
+100% { -ms-transform: rotate(90deg);
+  transform-origin: top left;
+}
+}
+@-keyframes spin1 {
+0% { transform: rotate(0deg);}
+100% { transform: rotate(90deg);
+  transform-origin: top left;
+}
+}
+
 
 #Head {
   left: 52.5%;
