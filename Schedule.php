@@ -87,11 +87,11 @@ if ($gClient->getAccessToken()) {
     $results = $service->events->listEvents($calendarId, $optParams);
 
     if (count($results->getItems()) == 0) {
-      print "No upcoming events found.\n";
+//      print "No upcoming events found.\n";
     } else {
 
         $allTheEvents = array();
-      print "Upcoming events:<br/><br/>";
+//      print "Upcoming events:<br/><br/>";
       foreach ($results->getItems() as $event) {
 
           // grab the start and end dates.
@@ -120,26 +120,26 @@ if ($gClient->getAccessToken()) {
         if (empty($start)) {
           $start = $event->start->date;
         }
-        printf("Summary: <strong>%s</strong><br/> Start Date: %s<br/>End Date: %s<br/> Start Time: %s<br/>End Time: %s<br/><br/>", $event->getSummary(), $newStart, $newEnd, $newStartTime, $newEndTime);
+//        printf("Summary: <strong>%s</strong><br/> Start Date: %s<br/>End Date: %s<br/> Start Time: %s<br/>End Time: %s<br/><br/>", $event->getSummary(), $newStart, $newEnd, $newStartTime, $newEndTime);
 
         // TESTING GETDATE
         // Converts date to useful information!!!!!
-          echo "UNIX timestamp: " . strtotime($newStart) . "<br/>";
-          foreach (getdate(strtotime($newStart)) as $key => $data) {
-              echo "[$key] => $data <br/>";
-          }
-          echo "<br/>";
+//          echo "UNIX timestamp: " . strtotime($newStart) . "<br/>";
+//          foreach (getdate(strtotime($newStart)) as $key => $data) {
+//              echo "[$key] => $data <br/>";
+//          }
+//          echo "<br/>";
       }
 
         // test $allTheEvents
-        echo "<br/>";
-        foreach ($allTheEvents as $key => $anEvent) {
-            echo "[$key]<br/>";
-            // must loop here too.
-            foreach ($anEvent as $sKey => $data) {
-                echo "[$sKey] => $data <br/>";
-            }
-        }
+//        echo "<br/>";
+//        foreach ($allTheEvents as $key => $anEvent) {
+//            echo "[$key]<br/>";
+//            // must loop here too.
+//            foreach ($anEvent as $sKey => $data) {
+//                echo "[$sKey] => $data <br/>";
+//            }
+//        }
     }
 
 } else {
