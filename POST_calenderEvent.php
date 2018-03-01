@@ -87,7 +87,7 @@ if ($gClient->getAccessToken()) {
         $servername = 'localhost';
         $dbname = 'googlelogin';
         $dblogin = 'root';
-        $password = '';
+        $password = 'root';
 
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $dblogin, $password);
 
@@ -161,7 +161,32 @@ if ($gClient->getAccessToken()) {
     // ****** SAVE EVENT ID and iCalUID IN THE DB HERE
     // ************************************************
     // ************************************************
+    $eID = $event['id'];
+    $iCalUID = $event['iCalUID'];
+    
+    try {
+        // Config setup
+        $servername = 'localhost';
+        $dbname = 'googlelogin';
+        $dblogin = 'root';
+        $password = 'root';
 
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $dblogin, $password);
+
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "
+                UPDATE rec_IDs
+                SET event_ID = '$eID', cal_UID = '$iCalUID'
+                WHERE ID = 1;
+                ";
+        $statement = $conn->prepare($sql);
+        $statement->execute();
+    } catch(PDOException $e) {
+        $error = $e->getMessage();
+        echo "Error: $e";
+    }
+        
     } else {
       $newURL = "index.php";
       header('Location: '.$newURL);
