@@ -412,8 +412,35 @@ html, body {
   opacity:1;
 }
 
+#LeftWB {
+  top: 10px;
+  left: -47px;
+  position: absolute;
+  opacity: 0;
+  transition:opacity 3000ms;
+}
 
+#LeftWB2 {
+  top: 10px;
+  left: -47px;
+  position: absolute;
+  opacity:1;
+}
 
+#RightWB {
+  top: 10px;
+  left: 68px;
+  position: absolute;
+  opacity: 0;
+  transition:opacity 3000ms;
+}
+
+#RightWB2 {
+  top: 10px;
+  left: 68px;
+  position: absolute;
+  opacity:1;
+}
 
 
 

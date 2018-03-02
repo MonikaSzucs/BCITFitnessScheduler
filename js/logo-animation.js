@@ -25,3 +25,11 @@ setTimeout(function() {
 setTimeout(function() {
   document.getElementById('LogoArmLong1').id = 'LogoArmLong11';
 }, 4000);
+
+setTimeout(function() {
+  document.getElementById('LeftWB').id = 'LeftWB2';
+}, 3000);
+
+setTimeout(function() {
+  document.getElementById('RightWB').id = 'RightWB2';
+}, 3000);
