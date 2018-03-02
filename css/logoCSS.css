@@ -1,0 +1,822 @@
+html, body {
+  height: 100%;
+}
+
+.container{
+  width:1025px;
+}
+
+.vertical-center {
+  height:100%;
+  width:100%;
+
+  text-align: center;  /* align the inline(-block) elements horizontally */
+  font: 0/0 a;         /* remove the gap between inline(-block) elements */
+}
+
+.vertical-center:before {    /* create a full-height inline block pseudo=element */
+  content: ' ';
+  display: inline-block;
+  vertical-align: middle;  /* vertical alignment of the inline element */
+  height: 100%;
+}
+
+.vertical-center > .container {
+  max-width: 100%;
+
+
+  display: inline-block;
+  vertical-align: middle;  /* vertical alignment of the inline element */
+  font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;        /* <-- reset the font property */
+}
+
+.services-section img {
+
+}
+
+.services-section-title {
+  min-width:275px;
+}
+
+.services-section-title img{
+  margin: auto;
+  display: block;
+}
+
+#logoArea{
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  display: block;
+  position: relative;
+}
+
+
+
+
+
+
+#LogoOuterRing {
+  height: 250px;
+  width: 250px;
+  background-image: url("../Icons/LogoParts/OuterRing.svg");
+  top: 0px;
+  background-size:cover;
+  background-repeat: no-repeat;
+  position:absolute;
+
+
+      -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+         -moz-animation: fadein 2s; /* Firefox < 16 */
+          -ms-animation: fadein 2s; /* Internet Explorer */
+           -o-animation: fadein 2s; /* Opera < 12.1 */
+              animation: fadein 2s;
+}
+
+
+@keyframes fadein {
+    from {
+      opacity: 0;
+      transform: rotateY(0deg);
+    }
+    to   {
+      opacity: 1;
+      transform: rotateY(720deg);
+    }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+    transform: rotateY(0deg);
+  }
+  to   {
+    opacity: 1;
+    transform: rotateY(720deg);
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+    transform: rotateY(0deg);
+  }
+  to   {
+    opacity: 1;
+    transform: rotateY(720deg);
+}
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+    transform: rotateY(0deg);
+  }
+  to   {
+    opacity: 1;
+    transform: rotateY(720deg);
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+    transform: rotateY(0deg);
+  }
+  to   {
+    opacity: 1;
+    transform: rotateY(720deg);
+  }
+}
+
+
+
+
+
+#LogoTopStopper{
+    left: 50%;
+    top: 0%;
+    position: absolute;
+    margin-top: -60px;
+    margin-left: -35px;
+    opacity: 0;
+    height: 64px;
+    width: 75px;
+    background-image: url("../Icons/LogoParts/TopStopper.svg");
+
+
+    -webkit-animation: TopStopperAnimate 2s ease-out 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: TopStopperAnimate 2s ease-out 2s; /* Firefox < 16 */
+        -ms-animation: TopStopperAnimate 2s ease-out 2s; /* Internet Explorer */
+         -o-animation: TopStopperAnimate 2s ease-out 2s; /* Opera < 12.1 */
+            animation: TopStopperAnimate 2s ease-out 2s;
+}
+
+@keyframes TopStopperAnimate {
+    from {
+      opacity: 0;
+      top: -200px;
+    }
+    to   {
+      opacity: 1;
+      top: 0px;
+      left: 50%;
+    }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes TopStopperAnimate {
+  from {
+    opacity: 0;
+    top: -200px;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+    left: 50%;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes TopStopperAnimate {
+  from {
+    opacity: 0;
+    top: -200px;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+    left: 50%;
+}
+}
+
+/* Internet Explorer */
+@-ms-keyframes TopStopperAnimate {
+  from {
+    opacity: 0;
+    top: -200px;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+    left: 50%;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes TopStopperAnimate {
+  from {
+    opacity: 0;
+    top: -200px;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+    left: 50%;
+  }
+}
+
+
+
+
+#LeftStopper {
+  left: 15%;
+  top: 0%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+  opacity: 0;
+
+  -webkit-animation: LeftStopperAnimate 2s ease-out 2s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: LeftStopperAnimate 2s ease-out 2s; /* Firefox < 16 */
+      -ms-animation: LeftStopperAnimate 2s ease-out 2s; /* Internet Explorer */
+       -o-animation: LeftStopperAnimate 2s ease-out 2s; /* Opera < 12.1 */
+          animation: LeftStopperAnimate 2s ease-out 2s;
+}
+
+@keyframes LeftStopperAnimate {
+    from {
+      opacity: 0;
+      top: -200px;
+      left: -50%;
+    }
+    to   {
+      opacity: 1;
+      top: 0px;
+      left: 15%;
+    }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes LeftStopperAnimate {
+  from {
+    opacity: 0;
+    top: -200px;
+    left: -50%;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+    left: 15%;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes LeftStopperAnimate {
+  from {
+    opacity: 0;
+    top: -200px;
+    left: -50%;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+    left: 15%;
+}
+}
+
+/* Internet Explorer */
+@-ms-keyframes LeftStopperAnimate {
+  from {
+    opacity: 0;
+    top: -200px;
+    left: -50%;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+    left: 15%;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes LeftStopperAnimate {
+  from {
+    opacity: 0;
+    top: -200px;
+    left: -50%;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+    left: 15%;
+  }
+}
+
+
+
+
+
+#RightStopper {
+  left: 95%;
+  top: 0%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+  animation-delay: 5s;
+  opacity: 0;
+
+  -webkit-animation: RightStopperAnimate 2s ease-out 2s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: RightStopperAnimate 2s ease-out 2s; /* Firefox < 16 */
+      -ms-animation: RightStopperAnimate 2s ease-out 2s; /* Internet Explorer */
+       -o-animation: RightStopperAnimate 2s ease-out 2s; /* Opera < 12.1 */
+          animation: RightStopperAnimate 2s ease-out 2s;
+}
+
+
+@keyframes RightStopperAnimate {
+    from {
+      opacity: 0;
+      top: -200px;
+      left: 150%;
+    }
+    to   {
+      opacity: 1;
+      top: 0px;
+      left: 95%;
+    }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes RightStopperAnimate {
+  from {
+    opacity: 0;
+    top: -200px;
+    left: 150%;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+    left: 95%;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes RightStopperAnimate {
+  from {
+    opacity: 0;
+    top: -200px;
+    left: 150%;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+    left: 95%;
+}
+}
+
+/* Internet Explorer */
+@-ms-keyframes RightStopperAnimate {
+  from {
+    opacity: 0;
+    top: -200px;
+    left: 150%;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+    left: 95%;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes RightStopperAnimate {
+  from {
+    opacity: 0;
+    top: -200px;
+    left: 150%;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+    left: 95%;
+  }
+}
+
+#OuterRingAll {
+  top: -53px;
+  left: -25px;
+  position: absolute;
+  opacity: 0;
+  transition:opacity 500ms;
+}
+
+#OuterRingAll2 {
+  top: -53px;
+  left: -25px;
+  position: absolute;
+  opacity:1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Head {
+  left: 52.5%;
+  top: 14%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+  opacity: 0;
+  transition:opacity 4000ms;
+}
+
+
+#Head2 {
+  top: 44px;
+  left: 96px;
+  position: absolute;
+  opacity:1;
+  -webkit-transition: opacity 1s ease-in;
+    -moz-transition: opacity 1s ease-in;
+    -o-transition: opacity 1s ease-in;
+    -ms-transition: opacity 1s ease-in;
+    transition: opacity 1s ease-in;
+}
+
+
+
+
+
+
+#TopBody{
+  left: 52.5%;
+  top: 37%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+  opacity: 0;
+  transition:opacity 4000ms;
+}
+
+#TopBody2 {
+  top: 102px;
+  left: 95px;
+  position: absolute;
+  opacity:1;
+  -webkit-transition: opacity 1s ease-in;
+    -moz-transition: opacity 1s ease-in;
+    -o-transition: opacity 1s ease-in;
+    -ms-transition: opacity 1s ease-in;
+    transition: opacity 1s ease-in;
+}
+
+
+
+
+#RightLeg{
+  left: 67%;
+  top: 52.5%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+  opacity: 0;
+}
+#RightLeg2 {
+  top: 137px;
+  left: 132px;
+  position: absolute;
+  opacity:1;
+  -webkit-transition: opacity 1s ease-in;
+    -moz-transition: opacity 1s ease-in;
+    -o-transition: opacity 1s ease-in;
+    -ms-transition: opacity 1s ease-in;
+    transition: opacity 1s ease-in;
+}
+
+
+
+
+#LeftLeg{
+  left: 48%;
+  top: 60%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+  opacity: 0;
+}
+#LeftLeg2 {
+  top: 155px;
+  left: 87px;
+  position: absolute;
+  opacity:1;
+  -webkit-transition: opacity 1s ease-in;
+    -moz-transition: opacity 1s ease-in;
+    -o-transition: opacity 1s ease-in;
+    -ms-transition: opacity 1s ease-in;
+    transition: opacity 1s ease-in;
+}
+
+
+
+
+
+
+#LogoArmShort{
+  left: 37%;
+  top: 32%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+  opacity: 0;
+}
+#LogoArmShort2 {
+  top: 93px;
+  left: 55px;
+  position: absolute;
+  opacity:1;
+  -webkit-transition: opacity 1s ease-in;
+    -moz-transition: opacity 1s ease-in;
+    -o-transition: opacity 1s ease-in;
+    -ms-transition: opacity 1s ease-in;
+    transition: opacity 1s ease-in;
+}
+
+#LogoArmLong1{
+  left: 70%;
+  top: 27%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+  opacity: 0;
+}
+#LogoArmLong11 {
+  left: 49%;
+  top: 20%;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -35px;
+  transform:          rotate(120deg);
+
+
+  -webkit-transition: opacity 1s ease-in;
+    -moz-transition: opacity 1s ease-in;
+    -o-transition: opacity 1s ease-in;
+    -ms-transition: opacity 1s ease-in;
+    transition: opacity 1s ease-in;
+    transform-origin: 75% 60%;
+
+
+    animation: shimmy 3s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes shimmy {
+  0% {
+    transform: rotate(120deg);
+  }
+  100% {
+    transform: rotate(170deg);
+  }
+}
+
+
+
+
+
+.top-buffer { margin-top:10%; }
+
+#myNavbar {
+  text-align: right;
+}
+
+#container {
+  margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#LogoName {
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
+
+    -webkit-animation: LogoName 12s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: LogoName 12s; /* Firefox < 16 */
+        -ms-animation: LogoName 12s; /* Internet Explorer */
+         -o-animation: LogoName 12s; /* Opera < 12.1 */
+            animation: LogoName 12s;
+}
+
+@keyframes LogoName {
+    from {
+      opacity: 0;
+      top: -200px;
+    }
+    to   {
+      opacity: 1;
+      top: 0px;
+    }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes LogoName {
+  from {
+    opacity: 0;
+    top: -200px;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes LogoName {
+  from {
+    opacity: 0;
+    top: -200px;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+}
+}
+
+/* Internet Explorer */
+@-ms-keyframes LogoName {
+  from {
+    opacity: 0;
+    top: -200px;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes LogoName {
+  from {
+    opacity: 0;
+    top: -200px;
+  }
+  to   {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+
+.textStyle {
+  padding-top: 10px;
+  display: block;
+  font-size: 20px;
+}
+
+.tabStyle{
+  font-size:20px;
+  margin-top: 30px;
+}
+
+#StudyStretch {
+
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 150px;
+        width: 150px;
+}
+
+#TaiChi {
+
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 150px;
+            width: 150px;
+}
+
+#WeekendRecovery {
+
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 150px;
+            width: 150px;
+}
+
+#CTC {
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 150px;
+            width: 150px;
+}
+
+#MuiTaiKickboxing {
+
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 150px;
+            width: 150px;
+}
+
+#LadiesWhoLift {
+
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 150px;
+            width: 150px;
+}
+
+.marginSpace {
+  margin-top: 30px;
+}
+
+button {
+  background-color:transparent;
+  border: 4px solid #f6821f;
+  border-radius: 5px;
+  margin: 10px;
+  width: 100px;
+  height: 30px;
+}
+
+button:hover {
+  background-color:#053b7b;
+  color: #fff;
+  border: none;
+  margin: 10px;
+  width: 100px;
+  height: 30px;
+}
+
+#pSpace{
+  margin-top: 30px;
+}
+
+strong {
+  font-size: 20px;
+}
+
+table {
+  width: 100%;
+  border:none;
+  border-color: transparent;
+  border-bottom: #000;
+  margin-top:50px;
+}
+
+td {
+  padding: 2px;
+}
+
+#LeftWB {
+  left: -46px;
+  top: 10px;
+  position: absolute;
+}
+
+#RightWB {
+  left: 69px;
+  top: 10px;
+  position: absolute;
+}
