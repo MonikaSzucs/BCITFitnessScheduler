@@ -490,16 +490,36 @@ html, body {
   opacity: 0;
 }
 #RightLeg2 {
-  top: 137px;
+  top: 127px;
   left: 132px;
   position: absolute;
   opacity:1;
+
+  transform:  rotate(0deg);
+
+
   -webkit-transition: opacity 1s ease-in;
     -moz-transition: opacity 1s ease-in;
     -o-transition: opacity 1s ease-in;
     -ms-transition: opacity 1s ease-in;
     transition: opacity 1s ease-in;
+    transform-origin: 0% 60%;
+
+
+    animation: shimmy2 3s infinite;
+  animation-direction: alternate;
 }
+
+@keyframes shimmy2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(60deg);
+  }
+}
+
+
 
 
 
@@ -563,7 +583,7 @@ html, body {
   position: absolute;
   margin-top: 10px;
   margin-left: -35px;
-  transform:          rotate(120deg);
+  transform:  rotate(120deg);
 
 
   -webkit-transition: opacity 1s ease-in;
