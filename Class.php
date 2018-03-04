@@ -191,7 +191,7 @@ if ($gClient->getAccessToken()) {
 							<?php
 							$servername = "localhost";
 							$username = "root";
-							$password = "";
+							$password = "root";
 							$dbname = "googlelogin";
 
 
@@ -274,34 +274,38 @@ if ($gClient->getAccessToken()) {
 					<p>
 					<?php
 							if($_GET['recreation'] === "TaiChi"){
-								echo "<button onClick='addTaiChi()'>Join</button>";
+								echo "<button onClick='addTaiChi()'>Join</button>
+                                <button onClick='deleteTaiChi()'>Leave</button>";
 								echo "<script>console.log( 'TaiChi' );</script>";
 							}
 							else if($_GET['recreation'] === "StudyStretch"){
-								echo "<button onClick='addStudyStretch()'>Join</button>";
+								echo "<button onClick='addStudyStretch()'>Join</button>
+                                <button onClick='deleteStudyStretch()'>Leave</button>";
 								echo "<script>console.log( 'addStudyStretch' );</script>";
 							}
 							else if($_GET['recreation'] === "WeekendRecovery"){
-								echo "<button onClick='addWeekendRecovery()'>Join</button>";
+								echo "<button onClick='addWeekendRecovery()'>Join</button>
+                                <button onClick='deleteWeekendRecovery()'>Leave</button>";
 								echo "<script>console.log( 'addWeekendRecovery' );</script>";
 							}
 							else if($_GET['recreation'] === "CTC"){
-								echo "<button onClick='addCTC()'>Join</button>";
+								echo "<button onClick='addCTC()'>Join</button>
+                                <button onClick='deleteCTC()'>Leave</button>";
 								echo "<script>console.log( 'addCTC' );</script>";
 							}
 							else if($_GET['recreation'] === "MuiTaiKickboxing"){
-								echo "<button onClick='addMuiTaiKickboxing()'>Join</button>";
+								echo "<button onClick='addMuiTaiKickboxing()'>Join</button>
+                                <button onClick='deleteMuiTaiKickboxing()'>Leave</button>";
 								echo "<script>console.log( 'addMuiTaiKickboxing' );</script>";
 							}
 							else if($_GET['recreation'] === "LadiesWhoLift"){
-								echo "<button onClick='addLadiesWhoLift()'>Join</button>";
+								echo "<button onClick='addLadiesWhoLift()'>Join</button>
+                                <button onClick='deleteLadiesWhoLift()'>Leave</button>";
 								echo "<script>console.log( 'addLadiesWhoLift' );</script>";
 							}
 
 					 ?>
 
-
-					<button>Leave</button>
 					</p>
 
         </div>
