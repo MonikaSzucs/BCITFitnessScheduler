@@ -278,10 +278,81 @@ if ($gClient->getAccessToken()) {
             </p>
 						<p id="pSpace">
 							<strong>When:</strong>
+<!--
 	            <br/>
 	            February 27, 2018
 	            <br/>
 	            11:00am - 12:00pm
+-->
+                            <?php
+                                if($_GET['recreation'] === "TaiChi"){
+											$check = $conn->prepare("SELECT * FROM recreations WHERE name='TaiChi'");
+											$check->execute();
+											$users = $check->fetchAll();
+											foreach ($users as $user) {
+											    $sTime = $user['startTime'];
+											    $eTime = $user['endTime'];
+											}
+									}
+									else if($_GET['recreation'] === "StudyStretch"){
+											$check = $conn->prepare("SELECT * FROM recreations WHERE name='StudyStretch'");
+											$check->execute();
+											$users = $check->fetchAll();
+											foreach ($users as $user) {
+													$sTime = $user['startTime'];
+													$eTime = $user['endTime'];
+											}
+									}
+									else if($_GET['recreation'] === "WeekendRecovery"){
+											$check = $conn->prepare("SELECT * FROM recreations WHERE name='WeekendRecovery'");
+											$check->execute();
+											$users = $check->fetchAll();
+											foreach ($users as $user) {
+													$sTime = $user['startTime'];
+													$eTime = $user['endTime'];
+											}
+									}
+									else if($_GET['recreation'] === "CTC"){
+										$check = $conn->prepare("SELECT * FROM recreations WHERE name='CrossTrainChallenge'");
+										$check->execute();
+										$users = $check->fetchAll();
+										foreach ($users as $user) {
+												$sTime = $user['startTime'];
+												$eTime = $user['endTime'];
+										};
+									}
+									else if($_GET['recreation'] === "MuiTaiKickboxing"){
+										$check = $conn->prepare("SELECT * FROM recreations WHERE name='MuiThaiKickBoxing'");
+										$check->execute();
+										$users = $check->fetchAll();
+										foreach ($users as $user) {
+												$sTime = $user['startTime'];
+												$eTime = $user['endTime'];
+										};
+									}
+									else if($_GET['recreation'] === "LadiesWhoLift"){
+										$check = $conn->prepare("SELECT * FROM recreations WHERE name='LadiesWhoLift'");
+										$check->execute();
+										$users = $check->fetchAll();
+										foreach ($users as $user) {
+												$sTime = $user['startTime'];
+												$eTime = $user['endTime'];
+										};
+									}
+                                // split the DATE with TIME.
+                                $newStart = substr($sTime, 0, 10);
+                                $newEnd = substr($eTime, 0, 10);
+                                $newStartTime = substr($sTime, 11, 5);
+                                $newEndTime = substr($eTime, 11, 5);
+                            
+                                // echo date and time.
+                                echo "
+                                    <br/>
+                                    $newStart
+                                    <br/>
+                                    $newStartTime - $newEndTime
+                                ";
+                            ?>
 						</p>
         </div>
         <div class="col-sm-2 text-center" id="subIcons">
