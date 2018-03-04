@@ -25,6 +25,34 @@ function addLadiesWhoLift() {
 }
 
 
+// functions for deleteing events
+// functions for deleteing events
+// functions for deleteing events ******
+function deleteTaiChi() {
+    deleteAJAX('tai_chi', 'Tai Chi');
+}
+
+function deleteStudyStretch() {
+  deleteAJAX('study_stretch', 'Study Stretch');
+}
+
+function deleteWeekendRecovery() {
+  deleteAJAX('weekend_recovery', 'Weekend Recovery');
+}
+
+function deleteCTC() {
+  deleteAJAX('ctc', 'Cross-Train Challenge');
+}
+
+function deleteMuiTaiKickboxing() {
+  deleteAJAX('mui_tai_kickboxing', 'Mui Thai Kick Boxing');
+}
+
+function deleteLadiesWhoLift() {
+  deleteAJAX('ladies_who_lift', 'Ladies Who Lift');
+}
+
+
 // Custom tailored AJAX so it can be used for any recreation by yours truly, Daren 'the back end coder' Capacio.
 function executeAJAX(theClass, msg) {
   // AJAX used below
@@ -45,4 +73,26 @@ function executeAJAX(theClass, msg) {
   data.append('class', theClass);
   xhttp.open("POST", "POST_calenderEvent.php", true);
   xhttp.send(data);
+}
+
+// AJAX for deleting events
+function deleteAJAX(theClass, msg) {
+    // AJAX used below
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        // Typical action to be performed when the   document is ready:
+        console.log('Attempted to delete event...');
+        console.log(this.responseText);
+    
+        // Change the feedback here (maybe alert, maybe jump to next page)
+        var alertMsg = msg + ' has been removed from your schedule!';
+        alert(alertMsg);
+      }
+    };
+    // Form data so it knows which one to add.
+    var data = new FormData();
+    data.append('class', theClass);
+    xhttp.open("POST", "DELETE_calenderEvent.php", true);
+    xhttp.send(data);
 }
