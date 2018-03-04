@@ -84,7 +84,7 @@ if ($gClient->getAccessToken()) {
 
 
             <div class="text-center">
-								<div><?php echo $output; ?></div>
+								<div id="loginButton"><?php echo $output; ?></div>
             </div>
           </div>
 

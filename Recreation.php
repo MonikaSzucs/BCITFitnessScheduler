@@ -225,7 +225,7 @@ if ($gClient->getAccessToken()) {
 </div>
 
 <footer class="container-fluid text-center">
-  <p>Footer Text</p>
+  <p>IFit © 2018</p>
 </footer>
 
 </body>
