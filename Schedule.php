@@ -266,19 +266,21 @@ if ($gClient->getAccessToken()) {
                         //      - day of the week
                         //      - time of row
 
-                        foreach ($allTheEvents as $anEvent) {
-                            $temp = strtotime($anEvent['sDate']);
-                            $dateHolder = getdate($temp);
+                        if (isset($allTheEvents)) {
+                            foreach ($allTheEvents as $anEvent) {
+                                $temp = strtotime($anEvent['sDate']);
+                                $dateHolder = getdate($temp);
 
-                            if ($dateHolder['wday'] == $j) {
-                                if ($anEvent['sTime'] == $theTime) {
-                                    // MATCH ***
-                                    // Display event in this cell!
-                                    $sumy = $anEvent['sumy'];
-                                    $newRow .= "<td style='background-color: #fff;color:#053b7b'>
-                                                    $sumy
-                                                </td>";
-                                    continue;
+                                if ($dateHolder['wday'] == $j) {
+                                    if ($anEvent['sTime'] == $theTime) {
+                                        // MATCH ***
+                                        // Display event in this cell!
+                                        $sumy = $anEvent['sumy'];
+                                        $newRow .= "<td style='background-color: #fff;color:#053b7b'>
+                                                        $sumy
+                                                    </td>";
+                                        continue;
+                                    }
                                 }
                             }
                         }
