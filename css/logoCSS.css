@@ -51,6 +51,16 @@ html, body {
   position: relative;
 }
 
+#loginButton img {
+  width: 300px !important;
+}
+
+#loginButton{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
 
 
 

@@ -43,14 +43,22 @@ html, body {
   display: block;
 }
 
+
+
+
 #logoArea{
   width: 250px;
   height: 250px;
   margin: auto;
   display: block;
   position: relative;
-  background-color:red;
+
 }
+
+
+
+
+
 
 #LogoOuterRing {
   height: 250px;
@@ -559,6 +567,8 @@ html, body {
   margin-top: 10px;
   margin-left: -35px;
 }
+
+
 
 .top-buffer { margin-top:10%; }
 
