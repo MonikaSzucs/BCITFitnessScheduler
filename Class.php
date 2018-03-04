@@ -65,7 +65,30 @@ if ($gClient->getAccessToken()) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>
+        IFit | 
+      <?php
+		if($_GET['recreation'] === "TaiChi"){
+			echo "Tai Chi";
+		}
+		else if($_GET['recreation'] === "StudyStretch"){
+			echo "Study Stretch";
+		}
+		else if($_GET['recreation'] === "WeekendRecovery"){
+			echo "Weekend Recovery";
+		}
+		else if($_GET['recreation'] === "CTC"){
+			echo "CTC";
+		}
+		else if($_GET['recreation'] === "MuiTaiKickboxing"){
+			echo "Mui Tai Kickboxing";
+		}
+		else if($_GET['recreation'] === "LadiesWhoLift"){
+			echo "Ladies Who Lift";
+		}
+      ?>
+      
+    </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css">

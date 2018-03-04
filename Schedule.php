@@ -150,7 +150,7 @@ if ($gClient->getAccessToken()) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>IFit | My Schedule</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css">
@@ -232,6 +232,46 @@ if ($gClient->getAccessToken()) {
     </div>
     <div id="container" class="col-sm-8 text-left">
       <div class="text-center">
+          <h3>
+            <?php
+              
+                try {
+                    // Config setup
+                    $servername = 'localhost';
+                    $dbname = 'googlelogin';
+                    $dblogin = 'root';
+                    $password = 'root';
+
+                    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $dblogin, $password);
+
+                    // set the PDO error mode to exception
+                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                    // 2nd join right here.
+                    $loggedInEmail = $userData['email'];
+                    $sql = "
+                            SELECT users.first_name, user_recreation.recreation_id
+                            FROM users
+                            INNER JOIN user_recreation
+                            ON users.email = '$loggedInEmail';
+                            ";
+                    $statement = $conn->prepare($sql);
+                    $statement->execute();
+                    $theWelcomeMsg = $statement->fetchAll(PDO::FETCH_ASSOC);
+                    
+                    $numOfEvents = count($theWelcomeMsg);
+                    $usr = $theWelcomeMsg[0]['first_name'];
+                    
+                    echo "Welcome $usr! <br/>You are scheduled for $numOfEvents events.";
+                    
+                } catch(PDOException $e) {
+                    $error = $e->getMessage();
+                    echo "Error: $e";
+                }
+              
+            ?>
+          </h3>
+          <br/>
         <h1>Schedule</h1>
     </div>
         <!--   ***** Daren Table addition *********   -->
