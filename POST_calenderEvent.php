@@ -178,7 +178,7 @@ if ($gClient->getAccessToken()) {
         $sql = "
                 UPDATE rec_IDs
                 SET event_ID = '$eID', cal_UID = '$iCalUID'
-                WHERE ID = 1;
+                WHERE ID = $theRow;
                 ";
         $statement = $conn->prepare($sql);
         $statement->execute();
@@ -186,6 +186,28 @@ if ($gClient->getAccessToken()) {
         $error = $e->getMessage();
         echo "Error: $e";
     }
+    
+    // THIS IS WHERE the joiner table is updated!!! ****
+    // THIS IS WHERE the joiner table is updated!!! ****
+    // THIS IS WHERE the joiner table is updated!!! ****
+    $userEmail = $userData['email'];
+    $sql = "
+            SELECT id
+            FROM users
+            WHERE email='$userEmail';
+            ";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    // $theUserID[0]['id'] :::: THE SELECTED <<<<<
+    $theUserID = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $theID = $theUserID[0]['id'];
+    
+    $sql = "
+            INSERT INTO user_recreation (user_id, recreation_id)
+            VALUES ($theID, $theRow);
+            ";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
         
     } else {
       $newURL = "index.php";
