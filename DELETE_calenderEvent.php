@@ -140,9 +140,20 @@ if ($gClient->getAccessToken()) {
         echo "Error: $e";
     }
     
-    // deletion occurs here.
+    // ********** deletion occurs here. **********
+    // ********** deletion occurs here. **********
+    // ********** deletion occurs here. **********
+    // ********** deletion occurs here. **********
     $eveID = $container[0]['event_ID'];
     $service->events->delete('primary', "$eveID");
+    
+    // delete appropriate user_recreation row.
+    $sql = "
+            DELETE FROM user_recreation
+            WHERE recreation_id = $theRow;
+            ";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
     
     echo 'EVENT REMOVED!';
     
