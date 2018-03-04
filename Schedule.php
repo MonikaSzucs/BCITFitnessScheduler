@@ -260,7 +260,7 @@ if ($gClient->getAccessToken()) {
                     $theWelcomeMsg = $statement->fetchAll(PDO::FETCH_ASSOC);
                     
                     $numOfEvents = count($theWelcomeMsg);
-                    $usr = $theWelcomeMsg[0]['first_name'];
+                    $usr = $userData['first_name'];
                     
                     echo "Welcome $usr! <br/>You are scheduled for $numOfEvents events.";
                     
