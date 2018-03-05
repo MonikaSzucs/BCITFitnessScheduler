@@ -175,9 +175,7 @@ if ($gClient->getAccessToken()) {
     </div>
     <div id="container" class="col-sm-10 text-left">
       <div class="text-center">
-        <h1 id='title'>
-
-					<?php
+        <h1 id='title'><?php
 							if($_GET['recreation'] === "TaiChi"){
 								echo "Tai Chi";
 							}
@@ -196,9 +194,7 @@ if ($gClient->getAccessToken()) {
 							else if($_GET['recreation'] === "LadiesWhoLift"){
 								echo "Ladies Who Lift";
 							}
-					 ?>
-
-					</h1>
+					 ?></h1>
 
 
         <a href='Recreation.php'>

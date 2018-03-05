@@ -17,10 +17,10 @@ switch (titleName) {
     case 'Weekend Recovery':
         searchQuery = 'bcit+yoga';
         break;
-    case 'Cross-Train Challenge':
+    case 'CTC':
         searchQuery = 'CTC+training';
         break;
-    case 'Mui Thai Kick Boxing':
+    case 'Mui Tai Kickboxing':
         searchQuery = 'mui+thai';
         break;
     case 'Ladies Who Lift':
